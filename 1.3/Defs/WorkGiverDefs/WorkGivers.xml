@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  
+  <!-- ============= Fishing ============= -->
+
+  <WorkGiverDef>
+    <defName>VCEF_Fish</defName>
+    <label>catch fish</label>
+    <giverClass>VCE_Fishing.WorkGiver_Fish</giverClass>
+    <workType>VCEF_Fishing</workType>
+    <priorityInType>100</priorityInType>
+    <verb>catch fish</verb>
+    <gerund>fishing</gerund>
+    <scanThings>false</scanThings>
+    <scanCells>true</scanCells>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+ 
+  
+ 
+
+</Defs>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- Various -->
+
+	<VCEF_FishingGrowingZone>Fishing Zone</VCEF_FishingGrowingZone>
+	<VCEF_FishingGrowingZoneDesc>Create a zone where your colonists will try to fish</VCEF_FishingGrowingZoneDesc>
+
+	<VCEF_ChooseFish>Choose catch</VCEF_ChooseFish>
+	<VCEF_ChooseFishDesc>Choose prefered fish size to catch from those inhabiting this biome. Smaller fish take less time but are less nutritive, while larger fish take longer and are more nutritive. Medium fish are balanced between the two extremes. There is always a chance to catch some different fish or special items</VCEF_ChooseFishDesc>
+
+
+	<VCEF_ChooseFishSmallLabel>Catch Small Fish</VCEF_ChooseFishSmallLabel>
+	<VCEF_ChooseFishMediumLabel>Catch Medium Fish</VCEF_ChooseFishMediumLabel>
+	<VCEF_ChooseFishLargeLabel>Catch Large Fish</VCEF_ChooseFishLargeLabel>
+
+	<VCEF_CommandAllowFishing>Allow Fishing</VCEF_CommandAllowFishing>
+	<VCEF_CommandAllowFishingDesc>Allow fishing to take place in this fishing zone</VCEF_CommandAllowFishingDesc>
+
+	<VCEF_ZoneSetTo>This zone is set to catch fish of size</VCEF_ZoneSetTo>
+	<VCEF_FishesInThisZone>Fish in this zone: </VCEF_FishesInThisZone>
+	<VCEF_IsZoneOceanZone>Oceanic fishing zone: </VCEF_IsZoneOceanZone>
+	<VCEF_Yes>Yes</VCEF_Yes>
+	<VCEF_No>No</VCEF_No>
+	<VCEF_ZoneTooSmall>This zone is too small. Fishing zones need to be at least {0} tiles to be valid (this calculation is made every few seconds: unpause to update).</VCEF_ZoneTooSmall>
+
+	<VCEF_NoFish>No fish to catch in this biome (this could happen with modded biomes, ask the owner to add support! Or perhaps you are in a lifeless biome)</VCEF_NoFish>
+
+	<VCEF_CaughtSpecial>While fishing, {0} has caught something special: {1}</VCEF_CaughtSpecial>
+
+	<!-- Options -->
+	
+	<VCEF_minimumZoneSize>Minimum Fishing Zone size</VCEF_minimumZoneSize>
+	<VCEF_minimumZoneSizeTooltip>Minimum Fishing Zone size, default is 25 tiles</VCEF_minimumZoneSizeTooltip>
+	
+	<VCEF_smallFishDurationFactor>Base Fishing Duration in ticks</VCEF_smallFishDurationFactor>
+	<VCEF_smallFishDurationFactorTooltip>Base Fishing Duration in ticks. Default is 4500 for small fish. Medium fish take double this time, while large fish take three times as much. Decreasing this increases food yield per day, and viceversa.</VCEF_smallFishDurationFactorTooltip>
+
+	<VCEF_chanceForSpecials>Chance to get an special item instead of fish</VCEF_chanceForSpecials>
+	<VCEF_chanceForSpecialsTooltip>Chance to get an special item instead of fish. Default is 1% per fishing operation.</VCEF_chanceForSpecialsTooltip>
+	
+	<VCEF_minMapTempForLowFish>Minimum map temperature for reduced fish yield</VCEF_minMapTempForLowFish>
+	<VCEF_minMapTempForLowFishTooltip>Minimum map temperature for reduced fish yield. Below this temperature fish yield will be greatly reduced. Default is 0ºC.</VCEF_minMapTempForLowFishTooltip>
+	
+	<VCEF_maxMapTempForLowFish>Maximum map temperature for reduced fish yield</VCEF_maxMapTempForLowFish>
+	<VCEF_maxMapTempForLowFishTooltip>Maximum map temperature for reduced fish yield. Above this temperature fish yield will be greatly reduced. Default is 50ºC.</VCEF_maxMapTempForLowFishTooltip>
+	
+	
+	
+	<VCEF_dropFish>Fisher drops fish on the ground instead of hauling to stockpiles</VCEF_dropFish>
+
+
+
+
+
+</LanguageData>

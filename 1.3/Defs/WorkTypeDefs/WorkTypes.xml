@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <WorkTypeDef>
+    <defName>VCEF_Fishing</defName>
+    <labelShort>Fish</labelShort>
+    <pawnLabel>Fisher</pawnLabel>
+    <gerundLabel>fishing</gerundLabel>
+    <description>Catch fish in designated work zones.</description>
+    <verb>Fish</verb>
+    <naturalPriority>90</naturalPriority>
+	<requireCapableColonist>true</requireCapableColonist>
+    <relevantSkills>
+   
+      <li>Animals</li>
+    </relevantSkills>
+    <workTags>
+      <li>ManualSkilled</li>
+	  <li>Animals</li>
+	  <li>Violent</li>
+	  <li>AllWork</li>
+
+    </workTags>
+  </WorkTypeDef>
+
+
+ 
+
+ 
+
+</Defs>

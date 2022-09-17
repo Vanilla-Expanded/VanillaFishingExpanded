@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+<Operation Class="PatchOperationConditional">
+    <xpath>/Defs/BiomeDef[defName="TKKN_RedwoodForest"]</xpath>
+    <success>Always</success>
+        <match Class="PatchOperationSequence">
+            <operations>
+            <li Class="PatchOperationAdd">                 <xpath>/Defs/VCE_Fishing.BiomeTempDef[defName="VCEF_BiomeWarm"]/biomes</xpath>
+                <value>
+                    <li>TKKN_RedwoodForest</li>
+					<li>TKKN_Grasslands</li>	 
+                </value>
+            </li>            
+            <li Class="PatchOperationAdd">           <xpath>/Defs/VCE_Fishing.BiomeTempDef[defName="VCEF_BiomeHot"]/biomes</xpath>
+                <value>
+                    <li>TKKN_Desert</li>
+					<li>TKKN_Oasis</li>	
+					<li>TKKN_VolcanicFlow</li>		
+					<li>TKKN_Savanna</li>                
+                </value>
+            </li>
+        </operations>
+    </match>
+</Operation>
+
+
+
+
+
+
+</Patch>
+

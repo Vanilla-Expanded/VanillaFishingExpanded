@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Combat Extended</li>
+				</mods> 
+				<match Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[
+                defName="VCEF_RawAnchovy" or
+                defName="VCEF_RawAngelfish" or
+                defName="VCEF_RawAnglerfish" or
+                defName="VCEF_RawBass" or
+                defName="VCEF_RawCatfish" or
+                defName="VCEF_RawClownfish" or
+                defName="VCEF_RawCod" or
+                defName="VCEF_RawEel" or
+                defName="VCEF_RawGoldfish" or
+                defName="VCEF_RawGuppy" or
+                defName="VCEF_RawHaddock" or
+                defName="VCEF_RawHalibut" or
+                defName="VCEF_RawHerring" or
+                defName="VCEF_RawKoi" or
+                defName="VCEF_RawLobster" or
+                defName="VCEF_RawMackerel" or
+                defName="VCEF_RawMinnow" or
+                defName="VCEF_RawPerch" or
+                defName="VCEF_RawPiranha" or
+                defName="VCEF_RawPufferfish" or
+                defName="VCEF_RawSalmon" or
+                defName="VCEF_RawSprat" or
+                defName="VCEF_RawSwordfish" or
+                defName="VCEF_RawTrout" or
+                defName="VCEF_RawTuna"
+                ]/tools</xpath>
+					<value>
+						<tools>
+							<li Class="CombatExtended.ToolCE">
+								<label>fish</label>
+								<capacities>
+									<li>Blunt</li>
+								</capacities>
+								<power>1</power>
+								<cooldownTime>2</cooldownTime>
+								<armorPenetrationBlunt>0.3</armorPenetrationBlunt>
+								<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+							</li>                          
+						</tools>
+					</value>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+
+</Patch>

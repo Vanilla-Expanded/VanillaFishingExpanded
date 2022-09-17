@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ 
+    <ThingCategoryDef>
+      <defName>VCEF_RawFishCategory</defName>
+      <label>raw fish</label>
+      <parent>MeatRaw</parent>
+	  <iconPath>Things/Item/Resource/VCEF_Mackerel/VCEF_Mackerel_c</iconPath>
+      
+    </ThingCategoryDef>
+
+
+
+</Defs>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Achievements Expanded</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+
+						<AchievementsExpanded.AchievementTabDef>
+							<defName>VCE_Achievements</defName>
+							<label>Vanilla Cuisine</label>
+						</AchievementsExpanded.AchievementTabDef>
+
+
+
+
+
+						<AchievementsExpanded.AchievementDef>
+							<defName>VCE_AchievementFeelingALittleShellfish</defName>
+							<label>Feeling a Little Shellfish</label>
+							<description>Make a Lavish meal with lobster</description>
+							<bgtexPath>Achievements/VCEF_AchievementBackground</bgtexPath>
+							<tab>VCE_Achievements</tab>
+							<tracker Class="AchievementsExpanded.ItemCraftTrackerWithIngredientsFishing">
+								<def>MealLavish</def>
+								<includeingredient>VCEF_RawLobster</includeingredient>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/VCE_AchievementFeelingALittleShellfish</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+
+						<AchievementsExpanded.AchievementDef>
+							<defName>VCE_AchievementFugu</defName>
+							<label>Fugu</label>
+							<description>Eat a raw pufferfish</description>
+							<bgtexPath>Achievements/VCEF_AchievementBackground</bgtexPath>
+							<tab>VCE_Achievements</tab>
+							<tracker Class="AchievementsExpanded.HediffTracker">
+								<def>VCE_AteRawPufferfish</def>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/VCE_AchievementFugu</texPath>
+							<points>10</points>
+						</AchievementsExpanded.AchievementDef>
+
+						<AchievementsExpanded.AchievementDef>
+							<defName>VCE_AchievementSomethingSpecial</defName>
+							<label>Something Special</label>
+							<description>Catch something that is not a fish</description>
+							<bgtexPath>Achievements/VCEF_AchievementBackground</bgtexPath>
+							<tab>VCE_Achievements</tab>
+							<tracker Class="AchievementsExpanded.HediffTracker">
+								<def>VCEF_CaughtSpecialHediff</def>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/VCE_AchievementSomethingSpecial</texPath>
+							<points>20</points>
+						</AchievementsExpanded.AchievementDef>
+
+
+
+
+					</value>
+				</li>
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+
