@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef>
+		<defName>VCE_AteRawPufferfish</defName>
+		<description>You didn't die. This time.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>recently ate raw pufferfish</label>
+		<defaultLabelColor>(.8,0,0)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Immunizable">
+				<severityPerDayNotImmune>-12</severityPerDayNotImmune>
+			</li>
+		</comps>
+		<stages>
+			<li>
+
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>VCEF_CaughtSpecialHediff</defName>
+		<description>This person has fished something special.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>recently fished something special</label>
+		<defaultLabelColor>(.8,0,0)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_Immunizable">
+				<severityPerDayNotImmune>-12</severityPerDayNotImmune>
+			</li>
+		</comps>
+		<stages>
+			<li>
+
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+
+	
+
+
+
+</Defs>

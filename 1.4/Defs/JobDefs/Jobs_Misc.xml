@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  
+  <JobDef>
+    <defName>VCEF_FishJob</defName>
+    <driverClass>VCE_Fishing.JobDriver_Fish</driverClass>
+    <reportString>fishing at TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+
+  
+ 
+  
+</Defs>

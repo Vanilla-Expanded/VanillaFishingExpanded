@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <EffecterDef>
+    <defName>VCEF_FishingEffectEast</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_east</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+    <EffecterDef>
+    <defName>VCEF_FishingEffectWest</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_west</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+      <EffecterDef>
+    <defName>VCEF_FishingEffectSouth</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_south</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+      <EffecterDef>
+    <defName>VCEF_FishingEffectNorth</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_north</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

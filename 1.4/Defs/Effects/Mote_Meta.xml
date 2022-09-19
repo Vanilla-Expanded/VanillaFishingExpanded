@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <ThingDef ParentName="MoteBase">
+    <defName>VCEF_Mote_Fishing_east</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>600</solidTime>
+	  
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/VCEF_FishingPoleEast</texPath>
+	  <drawSize>2</drawSize>
+    </graphicData>
+	
+	
+  </ThingDef>
+  
+   <ThingDef ParentName="MoteBase">
+    <defName>VCEF_Mote_Fishing_west</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>600</solidTime>
+	  
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/VCEF_FishingPoleWest</texPath>
+	  <drawSize>2</drawSize>
+    </graphicData>
+	
+	
+  </ThingDef>
+  
+     <ThingDef ParentName="MoteBase">
+    <defName>VCEF_Mote_Fishing_south</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>600</solidTime>
+	  
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/VCEF_FishingPoleSouth</texPath>
+	  <drawSize>2</drawSize>
+    </graphicData>
+	
+	
+  </ThingDef>
+  
+     <ThingDef ParentName="MoteBase">
+    <defName>VCEF_Mote_Fishing_north</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <solidTime>600</solidTime>
+	  
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/VCEF_FishingPoleNorth</texPath>
+	  <drawSize>2</drawSize>
+    </graphicData>
+	
+	
+  </ThingDef>
+  
+
+</Defs>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+<Operation Class="PatchOperationConditional">
+    <xpath>/Defs/BiomeDef[defName="LotRE_MallornForest"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAdd">
+            <xpath>/Defs/VCE_Fishing.BiomeTempDef[defName="VCEF_BiomeWarm"]/biomes</xpath>
+         <value>
+        <li>LotRE_MallornForest</li>
+         </value>
+    </match>
+</Operation>
+
+
+</Patch>
+
