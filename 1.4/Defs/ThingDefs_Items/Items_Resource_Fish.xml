@@ -51,26 +51,9 @@
 		</statBases>
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
-		</ingestible>
-		<tools>
-			<li>
-				<label>anchovy</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>1</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
+		</ingestible>		
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
+		
 	</ThingDef>
 	
 	
@@ -92,25 +75,9 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>angelfish</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>5</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
+		
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
+		
 	</ThingDef>
 	
 	<!-- Anglerfish -->
@@ -131,25 +98,10 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>anglerfish</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>3</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
+		
+		
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
+		
 	</ThingDef>
 	
 	<!-- Bass -->
@@ -171,25 +123,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>bass</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>10</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 	<!-- Catfish -->
@@ -210,25 +144,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>catfish</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>7</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 	
@@ -251,25 +167,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>clownfish</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>2</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 
 		<!-- Cod -->
@@ -291,25 +189,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>cod</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>10</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 			<!-- Eel -->
@@ -330,25 +210,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>eel</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>2</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 		<!-- Goldfish -->
@@ -370,25 +232,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>goldfish</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>1</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 	
@@ -411,25 +255,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>guppy</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>1</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 		<!-- Haddock -->
@@ -451,25 +277,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>haddock</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>8</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 
 			<!-- Halibut -->
@@ -491,25 +299,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>halibut</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>3</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 	<!-- Herring -->
@@ -530,25 +320,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>herring</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>2</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 		<!-- Koi -->
@@ -570,25 +342,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>koi</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>6</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 	
@@ -613,25 +367,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>lobster</label>
-				<capacities>
-					<li>Cut</li>
-				</capacities>
-				<power>7</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 		<!-- Mackerel -->
@@ -653,25 +389,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>mackerel</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>10</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 
 
@@ -693,25 +411,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>minnow</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>1</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 
 	<!-- Perch -->
@@ -732,25 +432,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>perch</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>7</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 			<!-- Piranha -->
@@ -771,25 +453,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>piranha</label>
-				<capacities>
-					<li>Cut</li>
-				</capacities>
-				<power>4</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 	<!-- Pufferfish -->
@@ -817,25 +481,7 @@
 				</li>
 			</outcomeDoers>
 		</ingestible>
-		<tools>
-			<li>
-				<label>pufferfish</label>
-				<capacities>
-					<li>ToxicBite</li>
-				</capacities>
-				<power>4</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 
 	<!-- Salmon -->
@@ -856,25 +502,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>salmon</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>10</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 	<!-- Sprat -->
@@ -895,25 +523,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>sprat</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>1</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 	
 		<!-- Swordfish -->
@@ -934,25 +544,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>swordfish</label>
-				<capacities>
-					<li>Stab</li>
-				</capacities>
-				<power>10</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 
 	<!-- Trout -->
@@ -973,25 +565,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>trout</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>5</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 
 	<!-- Tuna -->
@@ -1012,25 +586,7 @@
 		<ingestible>
 			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
 		</ingestible>
-		<tools>
-			<li>
-				<label>tuna</label>
-				<capacities>
-					<li>Blunt</li>
-				</capacities>
-				<power>10</power>
-				<cooldownTime>2</cooldownTime>
-			</li>
-		</tools>
-		<equippedAngleOffset>-180</equippedAngleOffset>
 		<uiIconForStackCount>1</uiIconForStackCount>
-		<equipmentType>Primary</equipmentType>
-		<techLevel>Neolithic</techLevel>
-		<comps>
-			<li>
-				<compClass>CompEquippable</compClass>
-			</li>
-		</comps>
 	</ThingDef>
 
 	
