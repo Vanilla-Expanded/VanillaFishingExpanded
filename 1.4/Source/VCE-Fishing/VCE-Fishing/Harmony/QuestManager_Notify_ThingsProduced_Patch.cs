@@ -9,7 +9,7 @@ using RimWorld.Planet;
 
 namespace AchievementsExpanded
 {
-    /*public class VanillaFishing_QuestManager_Notify_ThingsProduced_Patch
+    public class VanillaFishing_QuestManager_Notify_ThingsProduced_Patch
     {
 
         public static void CheckItemCraftedIngredients(Pawn worker, List<Thing> things)
@@ -34,5 +34,5 @@ namespace AchievementsExpanded
             }
 
         }
-    }*/
+    }
 }
