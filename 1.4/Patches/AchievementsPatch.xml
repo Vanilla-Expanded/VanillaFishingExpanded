@@ -16,8 +16,8 @@
 					<value>
 
 						<AchievementsExpanded.AchievementTabDef>
-							<defName>VCE_Achievements</defName>
-							<label>Vanilla Cuisine</label>
+							<defName>VCE_AchievementsFishing</defName>
+							<label>Vanilla Fishing</label>
 						</AchievementsExpanded.AchievementTabDef>
 
 
@@ -29,7 +29,7 @@
 							<label>Feeling a Little Shellfish</label>
 							<description>Make a Lavish meal with lobster</description>
 							<bgtexPath>Achievements/VCEF_AchievementBackground</bgtexPath>
-							<tab>VCE_Achievements</tab>
+							<tab>VCE_AchievementsFishing</tab>
 							<tracker Class="AchievementsExpanded.ItemCraftTrackerWithIngredientsFishing">
 								<def>MealLavish</def>
 								<includeingredient>VCEF_RawLobster</includeingredient>
@@ -45,7 +45,7 @@
 							<label>Fugu</label>
 							<description>Eat a raw pufferfish</description>
 							<bgtexPath>Achievements/VCEF_AchievementBackground</bgtexPath>
-							<tab>VCE_Achievements</tab>
+							<tab>VCE_AchievementsFishing</tab>
 							<tracker Class="AchievementsExpanded.HediffTracker">
 								<def>VCE_AteRawPufferfish</def>
 								<count>1</count>
@@ -60,7 +60,7 @@
 							<label>Something Special</label>
 							<description>Catch something that is not a fish</description>
 							<bgtexPath>Achievements/VCEF_AchievementBackground</bgtexPath>
-							<tab>VCE_Achievements</tab>
+							<tab>VCE_AchievementsFishing</tab>
 							<tracker Class="AchievementsExpanded.HediffTracker">
 								<def>VCEF_CaughtSpecialHediff</def>
 								<count>1</count>
