@@ -4,11 +4,11 @@
 
 
   <EffecterDef>
-    <defName>VCEF_FishingEffectEast</defName>
+    <defName>VCEF_FishingEffect_East</defName>
     <children>
       <li>
         <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
-        <moteDef>VCEF_Mote_Fishing_east</moteDef>
+        <moteDef>VCEF_Mote_Fishing_East</moteDef>
 		
 		<spawnLocType>BetweenTouchingCells</spawnLocType>
       </li>
@@ -16,11 +16,11 @@
   </EffecterDef>
   
     <EffecterDef>
-    <defName>VCEF_FishingEffectWest</defName>
+    <defName>VCEF_FishingEffect_West</defName>
     <children>
       <li>
         <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
-        <moteDef>VCEF_Mote_Fishing_west</moteDef>
+        <moteDef>VCEF_Mote_Fishing_West</moteDef>
 		
 		<spawnLocType>BetweenTouchingCells</spawnLocType>
       </li>
@@ -28,11 +28,11 @@
   </EffecterDef>
   
       <EffecterDef>
-    <defName>VCEF_FishingEffectSouth</defName>
+    <defName>VCEF_FishingEffect_South</defName>
     <children>
       <li>
         <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
-        <moteDef>VCEF_Mote_Fishing_south</moteDef>
+        <moteDef>VCEF_Mote_Fishing_South</moteDef>
 		
 		<spawnLocType>BetweenTouchingCells</spawnLocType>
       </li>
@@ -40,11 +40,107 @@
   </EffecterDef>
   
       <EffecterDef>
-    <defName>VCEF_FishingEffectNorth</defName>
+    <defName>VCEF_FishingEffect_North</defName>
     <children>
       <li>
         <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
-        <moteDef>VCEF_Mote_Fishing_north</moteDef>
+        <moteDef>VCEF_Mote_Fishing_North</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+    <EffecterDef>
+    <defName>VCEF_FishingEffect_Mech_East</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_Mech_East</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+    <EffecterDef>
+    <defName>VCEF_FishingEffect_Mech_West</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_Mech_West</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+      <EffecterDef>
+    <defName>VCEF_FishingEffect_Mech_South</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_Mech_South</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+      <EffecterDef>
+    <defName>VCEF_FishingEffect_Mech_North</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_Mech_North</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+   <EffecterDef>
+    <defName>VCEF_FishingEffect_Mech_New_East</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_Mech_New_East</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+    <EffecterDef>
+    <defName>VCEF_FishingEffect_Mech_New_West</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_Mech_New_West</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+      <EffecterDef>
+    <defName>VCEF_FishingEffect_Mech_New_South</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_Mech_New_South</moteDef>
+		
+		<spawnLocType>BetweenTouchingCells</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+      <EffecterDef>
+    <defName>VCEF_FishingEffect_Mech_New_North</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>VCEF_Mote_Fishing_Mech_New_North</moteDef>
 		
 		<spawnLocType>BetweenTouchingCells</spawnLocType>
       </li>

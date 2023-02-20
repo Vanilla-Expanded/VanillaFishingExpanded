@@ -246,16 +246,7 @@ namespace VCE_Fishing
                 };
             }
 
-            /*yield return new Command_Action
-            {
-                defaultLabel = "DEBUG: turn rebuild off",
-                icon = TexCommand.DesirePower,
-                action = delegate ()
-                {
-                    this.rebuild=false;
-                   
-                }
-            };*/
+           
 
             yield break;
         }

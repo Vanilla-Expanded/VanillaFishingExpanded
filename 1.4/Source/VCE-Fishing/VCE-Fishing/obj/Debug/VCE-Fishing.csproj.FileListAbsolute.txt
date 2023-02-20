@@ -33,4 +33,4 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFishingExpand
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Assemblies\VCE-Fishing.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.csproj.CopyComplete
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Source\VCE-Fishing\VCE-Fishing\obj\Debug\VCE-Fishing.csproj.AssemblyReference.cache

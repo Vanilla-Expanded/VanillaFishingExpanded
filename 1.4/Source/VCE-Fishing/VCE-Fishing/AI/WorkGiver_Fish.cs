@@ -87,7 +87,7 @@ namespace VCE_Fishing
             {
                 return null;
             }
-            Job job = new Job(DefDatabase<JobDef>.GetNamed("VCEF_FishJob"),c);
+            Job job = new Job(InternalDefOf.VCEF_FishJob,c);
             return job;
         }
 

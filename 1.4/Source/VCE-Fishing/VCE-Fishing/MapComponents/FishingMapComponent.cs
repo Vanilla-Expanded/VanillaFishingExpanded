@@ -55,7 +55,7 @@ namespace VCE_Fishing
                     int index = 0;
                     while (index < zoneFishing.cells.Count)
                     {
-                       if (zoneFishing.cells[index].GetTerrain(this.map).defName== "WaterOceanDeep"|| zoneFishing.cells[index].GetTerrain(this.map).defName == "WaterOceanShallow")
+                       if (zoneFishing.cells[index].GetTerrain(this.map) == TerrainDefOf.WaterOceanDeep|| zoneFishing.cells[index].GetTerrain(this.map) == TerrainDefOf.WaterOceanShallow)
                        {
                            
                             zoneFishing.isOcean = true;

@@ -14,7 +14,7 @@ namespace VCE_Fishing
     {
         public float pawnFishingSkill = 10;
         public FishSizeCategory sizeAtBeginning = FishSizeCategory.Medium;
-        public ThingDef fishCaught = DefDatabase<ThingDef>.GetNamed("VCEF_RawMackerel");
+        public ThingDef fishCaught = InternalDefOf.VCEF_RawMackerel;
         public int fishAmount = 1;
         public int fishAmountWithSkill;
         public int minFishingSkillForMinYield = 6;
@@ -91,12 +91,6 @@ namespace VCE_Fishing
         protected override IEnumerable<Toil> MakeNewToils()
         {
 
-
-
-
-
-
-
             if (fishCaught == null)
             {
                 this.EndJobWith(JobCondition.Incompletable);
@@ -108,14 +102,14 @@ namespace VCE_Fishing
             yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
             this.pawn.rotationTracker.FaceTarget(base.TargetA);
             Toil fishToil = new Toil();
-            if (this.pawn.story?.traits?.HasTrait(DefDatabase<TraitDef>.GetNamedSilentFail("VCEF_Fisherman"))==true)
+            if (this.pawn.story?.traits?.HasTrait(InternalDefOf.VCEF_Fisherman)==true)
             {
 
-                this.pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("VCEF_FishingThought"));
+                this.pawn.needs.mood.thoughts.memories.TryGainMemory(InternalDefOf.VCEF_FishingThought);
             }
             fishToil.tickAction = delegate ()
             {
-                this.pawn.skills.Learn(SkillDefOf.Animals, skillGainperTick);
+                this.pawn.skills?.Learn(SkillDefOf.Animals, skillGainperTick);
                 if (fishingZone != null)
                 {
                     if (!fishingZone.isZoneBigEnough)
@@ -129,33 +123,10 @@ namespace VCE_Fishing
 
             Rot4 pawnRotation = pawn.Rotation;
             IntVec3 facingCell = pawnRotation.FacingCell;
-            if (facingCell == new IntVec3(0, 0, 1))
-            {
-                //Log.Message("Looking north");
-                fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectNorth"), () => this.TargetA.Cell + new IntVec3(0, 0, 1));
+            EffecterDef effecter = SelectFishingMote(facingCell);
 
-
-            }
-            else if (facingCell == new IntVec3(1, 0, 0))
-            {
-                // Log.Message("Looking east");
-
-                fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectEast"), () => this.TargetA.Cell + new IntVec3(1, 0, 0));
-
-            }
-            else if (facingCell == new IntVec3(0, 0, -1))
-            {
-                // Log.Message("Looking south");
-                fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectSouth"), () => this.TargetA.Cell + new IntVec3(0, 0, -1));
-
-
-            }
-            else if (facingCell == new IntVec3(-1, 0, 0))
-            {
-                //  Log.Message("Looking west");
-                fishToil.WithEffect(() => DefDatabase<EffecterDef>.GetNamed("VCEF_FishingEffectWest"), () => this.TargetA.Cell + new IntVec3(-1, 0, 0));
-
-            }
+            fishToil.WithEffect(() => effecter, () => this.TargetA.Cell + facingCell);
+            
             fishToil.defaultCompleteMode = ToilCompleteMode.Delay;
 
             switch (sizeAtBeginning)
@@ -187,9 +158,7 @@ namespace VCE_Fishing
                 }
 
             }
-            
-
-            //Log.Message(fishToil.defaultDuration.ToString());       
+  
             fishToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
             yield return fishToil.WithProgressBarToilDelay(TargetIndex.A, true);
             yield return new Toil
@@ -206,7 +175,7 @@ namespace VCE_Fishing
                     if (caughtSomethingSpecial)
                     {
                         Messages.Message("VCEF_CaughtSpecial".Translate(this.pawn.LabelCap, newFish.LabelCap), this.pawn, MessageTypeDefOf.NeutralEvent);
-                        this.pawn.health.AddHediff(HediffDef.Named("VCEF_CaughtSpecialHediff"));
+                        this.pawn.health.AddHediff(InternalDefOf.VCEF_CaughtSpecialHediff);
                         caughtSomethingSpecial = false;
                     }
                     StoragePriority currentPriority = StoreUtility.CurrentStoragePriorityOf(newFish);
@@ -216,9 +185,6 @@ namespace VCE_Fishing
                         this.job.SetTarget(TargetIndex.C, c);
                         this.job.SetTarget(TargetIndex.B, newFish);
                         this.job.count = newFish.stackCount;
-
-
-
 
                     }
                     else
@@ -242,9 +208,6 @@ namespace VCE_Fishing
 
             }
 
-
-
-
             yield break;
 
 
@@ -257,8 +220,14 @@ namespace VCE_Fishing
             {
                 return amount;
             }
+            if (this.pawn.IsColonyMech) {
+                fishingSkill = 10;
+            } else
+            {
+                fishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(InternalDefOf.VCEF_Fishing);
+            }
 
-            fishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(DefDatabase<WorkTypeDef>.GetNamed("VCEF_Fishing"));
+            
 
             if (fishingSkill >= minFishingSkillForMinYield)
             {
@@ -320,6 +289,34 @@ namespace VCE_Fishing
             else return null;
 
 
+        }
+
+        public EffecterDef SelectFishingMote(IntVec3 facingCell)
+        {
+            string baseString = "VCEF_FishingEffect";
+            string mechString = this.pawn.IsColonyMech ? "_Mech" : "";
+            string mechNew = (this.pawn.IsColonyMech && this.pawn.ageTracker.AgeChronologicalYears<100) ? "_New" : "";
+            string rotationString = "";
+
+
+            if (facingCell == new IntVec3(0, 0, 1))
+            {
+                rotationString = "_North";
+            }
+            else if (facingCell == new IntVec3(1, 0, 0))
+            {
+                rotationString = "_East";
+
+            }
+            else if (facingCell == new IntVec3(0, 0, -1))
+            {
+                rotationString = "_South";
+            }
+            else if (facingCell == new IntVec3(-1, 0, 0))
+            {
+                rotationString = "_West";
+            }
+            return DefDatabase<EffecterDef>.GetNamed(baseString+ mechString+ mechNew+rotationString);
         }
 
     }

@@ -301,6 +301,7 @@
     <Compile Include="Commands\Command_SetFishList.cs" />
     <Compile Include="Comps\CompFishTrap.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_FishTrap.cs" />
+    <Compile Include="DefOfs\InternalDefOf.cs" />
     <Compile Include="Defs\BiomeTempDef.cs" />
     <Compile Include="Defs\FishableTerrainDef.cs" />
     <Compile Include="Defs\FishDef.cs" />
