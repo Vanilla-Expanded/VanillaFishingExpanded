@@ -1,0 +1,5 @@
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Assemblies\VCE-Fishing.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Source\VCE-Fishing\VCE-Fishing\obj\Release\VCE-Fishing.csproj.AssemblyReference.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Source\VCE-Fishing\VCE-Fishing\obj\Release\VCE-Fishing.csproj.CoreCompileInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Source\VCE-Fishing\VCE-Fishing\obj\Release\VCE-Fishing.csproj.CopyComplete
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\VanillaFishingExpanded\1.4\Source\VCE-Fishing\VCE-Fishing\obj\Release\VCE-Fishing.dll
