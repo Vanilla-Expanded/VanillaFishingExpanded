@@ -1,0 +1,14 @@
+# User-specific files
+settings.json
+workshop_scraper.json
+*.xml
+gitignore.txt
+DiscordUpdate.txt
+LICENSE.md
+.vs
+obj
+MigrationBackup
+*.DotSettings.user
+.fake
+.ionide
+*.nupkg
