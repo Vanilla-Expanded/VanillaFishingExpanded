@@ -171,7 +171,7 @@ namespace VCE_Fishing
                     }
                     Thing newFish = ThingMaker.MakeThing(fishCaught);
                     newFish.stackCount = fishAmountWithSkill;
-                    GenSpawn.Spawn(newFish, this.TargetA.Cell - GenAdj.CardinalDirections[0], this.Map);
+                    GenSpawn.Spawn(newFish, pawn.Position + pawnRotation.Opposite.FacingCell, this.Map);
                     if (caughtSomethingSpecial)
                     {
                         Messages.Message("VCEF_CaughtSpecial".Translate(this.pawn.LabelCap, newFish.LabelCap), this.pawn, MessageTypeDefOf.NeutralEvent);
