@@ -17,12 +17,12 @@
 	<VCEF_CommandAllowFishing>Allow Fishing</VCEF_CommandAllowFishing>
 	<VCEF_CommandAllowFishingDesc>Allow fishing to take place in this fishing zone</VCEF_CommandAllowFishingDesc>
 
-	<VCEF_ZoneSetTo>This zone is set to catch fish of size</VCEF_ZoneSetTo>
+	<VCEF_ZoneSetTo>This zone of size {0} is set to catch fish of size</VCEF_ZoneSetTo>
 	<VCEF_FishesInThisZone>Fish in this zone: </VCEF_FishesInThisZone>
 	<VCEF_IsZoneOceanZone>Oceanic fishing zone: </VCEF_IsZoneOceanZone>
 	<VCEF_Yes>Yes</VCEF_Yes>
 	<VCEF_No>No</VCEF_No>
-	<VCEF_ZoneTooSmall>This zone is too small. Fishing zones need to be at least {0} tiles to be valid (this calculation is made every few seconds: unpause to update).</VCEF_ZoneTooSmall>
+	<VCEF_ZoneTooSmall>This zone is too small (size {0}). Fishing zones need to be at least {1} tiles to be valid (this calculation is made every few seconds: unpause to update).</VCEF_ZoneTooSmall>
 
 	<VCEF_NoFish>No fish to catch in this biome (this could happen with modded biomes, ask the owner to add support! Or perhaps you are in a lifeless biome)</VCEF_NoFish>
 

@@ -216,7 +216,7 @@ namespace VCE_Fishing
                 {
                     if (!isZoneEmpty)
                     {
-                        text += "VCEF_ZoneSetTo".Translate() + ": " + GetFishToCatch().ToString();
+                        text += "VCEF_ZoneSetTo".Translate(this.cells.Count) + ": " + GetFishToCatch().ToString();
                         if (this.fishInThisZone != null)
                         {
                             text += "\n" + "VCEF_FishesInThisZone".Translate();
@@ -247,7 +247,7 @@ namespace VCE_Fishing
                 }
                 else
                 {
-                    text += "VCEF_ZoneTooSmall".Translate(Options.VCE_Fishing_Settings.VCEF_minimumZoneSize);
+                    text += "VCEF_ZoneTooSmall".Translate(this.cells.Count,Options.VCE_Fishing_Settings.VCEF_minimumZoneSize);
                 }
             }
 
