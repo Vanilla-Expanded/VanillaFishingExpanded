@@ -100,16 +100,16 @@ namespace VCE_Fishing
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.FailOnBurningImmobile(TargetIndex.A);
             yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
-            this.pawn.rotationTracker.FaceTarget(base.TargetA);
+            this.pawn?.rotationTracker?.FaceTarget(base.TargetA);
             Toil fishToil = new Toil();
-            if (this.pawn.story?.traits?.HasTrait(InternalDefOf.VCEF_Fisherman)==true)
+            if (this.pawn?.story?.traits?.HasTrait(InternalDefOf.VCEF_Fisherman)==true)
             {
 
-                this.pawn.needs.mood.thoughts.memories.TryGainMemory(InternalDefOf.VCEF_FishingThought);
+                this.pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VCEF_FishingThought);
             }
             fishToil.tickAction = delegate ()
             {
-                this.pawn.skills?.Learn(SkillDefOf.Animals, skillGainperTick);
+                this.pawn?.skills?.Learn(SkillDefOf.Animals, skillGainperTick);
                 if (fishingZone != null)
                 {
                     if (!fishingZone.isZoneBigEnough)
@@ -147,11 +147,11 @@ namespace VCE_Fishing
                     break;
             }
 
-            List<Apparel> wornApparel = this.pawn.apparel?.WornApparel;
+            List<Apparel> wornApparel = this.pawn?.apparel?.WornApparel;
             if (wornApparel != null) {
                 for (int i = 0; i < wornApparel.Count; i++)
                 {
-                    if (wornApparel[i].def.defName == "VME_TackleBox")
+                    if (wornApparel[i].def?.defName == "VME_TackleBox")
                     {
                         fishToil.defaultDuration = (int)(fishToil.defaultDuration * 0.8f);
                     }
@@ -165,9 +165,9 @@ namespace VCE_Fishing
             {
                 initAction = delegate
                 {
-                    if (ModLister.IdeologyInstalled && this.pawn.ideo?.Ideo?.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail("VME_Recreation_Fishing"))==true)
+                    if (ModLister.IdeologyInstalled && this.pawn?.ideo?.Ideo?.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail("VME_Recreation_Fishing"))==true)
                     {
-                        this.pawn.needs.joy.GainJoy(0.1f, JoyKindDefOf.Meditative);
+                        this.pawn?.needs?.joy?.GainJoy(0.1f, JoyKindDefOf.Meditative);
                     }
                     Thing newFish = ThingMaker.MakeThing(fishCaught);
                     newFish.stackCount = fishAmountWithSkill;
@@ -175,7 +175,7 @@ namespace VCE_Fishing
                     if (caughtSomethingSpecial)
                     {
                         Messages.Message("VCEF_CaughtSpecial".Translate(this.pawn.LabelCap, newFish.LabelCap), this.pawn, MessageTypeDefOf.NeutralEvent);
-                        this.pawn.health.AddHediff(InternalDefOf.VCEF_CaughtSpecialHediff);
+                        this.pawn?.health?.AddHediff(InternalDefOf.VCEF_CaughtSpecialHediff);
                         caughtSomethingSpecial = false;
                     }
                     StoragePriority currentPriority = StoreUtility.CurrentStoragePriorityOf(newFish);
