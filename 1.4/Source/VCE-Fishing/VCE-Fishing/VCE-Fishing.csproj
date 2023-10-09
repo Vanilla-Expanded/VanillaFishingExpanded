@@ -313,6 +313,7 @@
     <Compile Include="Options\Settings_Controller.cs" />
     <Compile Include="Options\VCE_Fishing_Settings.cs" />
     <Compile Include="AI\WorkGiver_Fish.cs" />
+    <Compile Include="Utils\Utils.cs" />
     <Compile Include="Zones\Zone_Fishing.cs" />
     <Compile Include="Designators\Designator_ZoneAdd_Fishing_Expand.cs" />
     <Compile Include="Designators\Designator_ZoneAdd_Fishing.cs" />
