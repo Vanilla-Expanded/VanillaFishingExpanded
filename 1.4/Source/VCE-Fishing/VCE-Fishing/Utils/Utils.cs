@@ -14,7 +14,7 @@ namespace VCE_Fishing
     public class Utils
     {
         
-        public List<ThingDef> GetFishList(int fishSize, BiomeDef biomeToConsider, TerrainDef terrain)
+        public List<ThingDef> GetFishList(byte fishSize, BiomeDef biomeToConsider, TerrainDef terrain)
         {
             List<ThingDef> fishList = new List<ThingDef>();
 
