@@ -14,9 +14,9 @@ namespace VCE_Fishing
     public class Utils
     {
         
-        public List<ThingDef> GetFishList(byte fishSize, BiomeDef biomeToConsider, TerrainDef terrain)
+        public List<(ThingDef, int)> GetFishList(byte fishSize, BiomeDef biomeToConsider, TerrainDef terrain)
         {
-            List<ThingDef> fishList = new List<ThingDef>();
+            List<(ThingDef, int)> fishList = new List<(ThingDef, int)>();
 
             FishSizeCategory fishSizeCategory = (FishSizeCategory)fishSize;
 
@@ -33,11 +33,11 @@ namespace VCE_Fishing
                             {
                                 if (IsTerrainOcean(terrain) && element.canBeSaltwater)
                                 {
-                                    fishList.Add(element.thingDef);
+                                    fishList.Add((element.thingDef,element.baseFishingYield));
                                 }
                                 if (!IsTerrainOcean(terrain) && element.canBeFreshwater)
                                 {
-                                    fishList.Add(element.thingDef);
+                                    fishList.Add((element.thingDef, element.baseFishingYield));
                                 }
                             }
                         }
