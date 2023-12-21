@@ -305,6 +305,8 @@
     <Compile Include="Defs\BiomeTempDef.cs" />
     <Compile Include="Defs\FishableTerrainDef.cs" />
     <Compile Include="Defs\FishDef.cs" />
+    <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="Harmony\ThingDef_IsMeat.cs" />
     <Compile Include="MapComponents\FishingMapComponent.cs" />
     <Compile Include="Defs\FishSizeCategory.cs" />
     <Compile Include="Commands\FishToCatchSettableUtility.cs" />

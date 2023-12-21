@@ -20,7 +20,10 @@ namespace VCE_Fishing
 
 		public static WorkTypeDef VCEF_Fishing;
 
-		static InternalDefOf()
+		public static ThingCategoryDef VCEF_RawFishCategory;
+
+
+        static InternalDefOf()
 		{
 			DefOfHelper.EnsureInitializedInCtor(typeof(InternalDefOf));
 		}
