@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TraitDef>
+    <defName>VCEF_Fisherman</defName>
+    <commonality>1.1</commonality>
+    <degreeDatas>
+      <li>
+        <label>fisherman</label>
+        <description>{PAWN_nameDef} enjoys the solitude and tranquility inherent to long fishing sessions. {PAWN_pronoun} will prefer fishing above other activities.</description>
+      </li>
+    </degreeDatas>
+	<requiredWorkTags>
+      <li>Violent</li>
+	  <li>Animals</li>
+    </requiredWorkTags>
+  </TraitDef>
+
+ 
+
+</Defs>
