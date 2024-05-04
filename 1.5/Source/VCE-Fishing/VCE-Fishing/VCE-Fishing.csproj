@@ -294,7 +294,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achievements\ItemCraftTrackerWithIngredients.cs" />
     <Compile Include="Commands\Command_SetFishList.cs" />
     <Compile Include="Comps\CompFishTrap.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_FishTrap.cs" />
@@ -307,7 +306,6 @@
     <Compile Include="MapComponents\FishingMapComponent.cs" />
     <Compile Include="Defs\FishSizeCategory.cs" />
     <Compile Include="Commands\FishToCatchSettableUtility.cs" />
-    <Compile Include="Harmony\QuestManager_Notify_ThingsProduced_Patch.cs" />
     <Compile Include="AI\JobDriver_Fish.cs" />
     <Compile Include="Options\Settings_Controller.cs" />
     <Compile Include="Options\VCE_Fishing_Settings.cs" />

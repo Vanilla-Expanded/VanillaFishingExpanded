@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Patch>
-
-
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Vanilla Achievements Expanded</li>
-		</mods>
-
-		<match Class="PatchOperationSequence">
-			<operations>
-
-
-				<li Class="PatchOperationAdd"> 
-					<xpath>/Defs</xpath>
-					<value>
+<Defs>
 
 						<AchievementsExpanded.AchievementTabDef>
 							<defName>VCE_AchievementsFishing</defName>
 							<label>Vanilla Fishing</label>
 						</AchievementsExpanded.AchievementTabDef>
-
-
 
 
 
@@ -30,7 +14,7 @@
 							<description>Make a Lavish meal with lobster</description>
 							<bgtexPath>Achievements/VCEF_AchievementBackground</bgtexPath>
 							<tab>VCE_AchievementsFishing</tab>
-							<tracker Class="AchievementsExpanded.ItemCraftTrackerWithIngredientsFishing">
+							<tracker Class="AchievementsExpanded.ItemCraftTracker">
 								<def>MealLavish</def>
 								<includeingredient>VCEF_RawLobster</includeingredient>
 								<count>1</count>
@@ -73,14 +57,6 @@
 
 
 
-					</value>
-				</li>
+</Defs>
 
-
-			</operations>
-		</match>
-	</Operation>
-
-
-</Patch>
 
