@@ -13,8 +13,8 @@ namespace VCE_Fishing
     public class FishingMapComponent : MapComponent
     {
 
-        private int fishTickProgress = 0;
-        private int fishTickMax = 128;
+        public int fishTickProgress = 0;
+        public int fishTickMax = 1200;
 
         public FishingMapComponent(Map map) : base(map)
         {
@@ -22,56 +22,51 @@ namespace VCE_Fishing
         }
         public override void MapComponentTick()
         {
-            base.MapComponentTick();
-
-            if (fishTickProgress>= fishTickMax) {
-                foreach (Zone zone in this.map.zoneManager.AllZones.Where(zone => zone.GetType() == typeof(Zone_Fishing)))
+            //base.MapComponentTick();
+            if (fishTickProgress >= fishTickMax)
+            {
+                //foreach (Zone zone in this.map.zoneManager.AllZones.Where(zone => zone.GetType() == typeof(Zone_Fishing)))
+                //{
+                //    Zone_Fishing zoneFishing = zone as Zone_Fishing;
+                //    zoneFishing.isZonePolluted = false;
+                //    if (ModsConfig.BiotechActive)
+                //    {
+                //        foreach (IntVec3 cell in zoneFishing.cells)
+                //        {
+                //            if (cell.IsPolluted(zoneFishing.Map))
+                //            {
+                //                zoneFishing.isZonePolluted = true;
+                //                break;
+                //            }
+                //        }
+                //    }
+                //    if (zoneFishing.cells.Count < Options.VCE_Fishing_Settings.VCEF_minimumZoneSize)
+                //    {
+                //        zoneFishing.isZoneBigEnough = false;
+                //    } else zoneFishing.isZoneBigEnough = true;
+                //    int index = 0;
+                //    while (index < zoneFishing.cells.Count)
+                //    {
+                //       if (zoneFishing.cells[index].GetTerrain(this.map) == TerrainDefOf.WaterOceanDeep|| zoneFishing.cells[index].GetTerrain(this.map) == TerrainDefOf.WaterOceanShallow)
+                //       {
+                //            zoneFishing.isOcean = true;
+                //            zoneFishing.InitialSetZoneFishList();
+                //            break;
+                //       }
+                //       index++;
+                //       zoneFishing.isOcean = false;
+                //    }
+                //}
+                foreach (Zone zone in this.map.zoneManager.AllZones)
                 {
-                    
-                    Zone_Fishing zoneFishing = zone as Zone_Fishing;
-
-                    zoneFishing.isZonePolluted = false;
-                    if (ModsConfig.BiotechActive)
+                    if (zone is Zone_Fishing zoneFishing)
                     {
-
-                        foreach (IntVec3 cell in zoneFishing.cells)
-                        {
-
-                            if (cell.IsPolluted(zoneFishing.Map))
-                            {
-
-                                zoneFishing.isZonePolluted = true;
-                            }
-
-                        }
-                    }
-
-
-                    if (zoneFishing.cells.Count < Options.VCE_Fishing_Settings.VCEF_minimumZoneSize)
-                    {
-                        zoneFishing.isZoneBigEnough = false;
-                    } else zoneFishing.isZoneBigEnough = true;
-
-                    int index = 0;
-                    while (index < zoneFishing.cells.Count)
-                    {
-                       if (zoneFishing.cells[index].GetTerrain(this.map) == TerrainDefOf.WaterOceanDeep|| zoneFishing.cells[index].GetTerrain(this.map) == TerrainDefOf.WaterOceanShallow)
-                       {
-                           
-                            zoneFishing.isOcean = true;
-                            zoneFishing.initialSetZoneFishList();
-                            break;
-                       }
-                       index++;
-                       zoneFishing.isOcean = false;
+                        zoneFishing.InitialSetZoneFishList();
                     }
                 }
                 fishTickProgress = 0;
             }
             fishTickProgress++;
-
-
-
         }
     }
 }

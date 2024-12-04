@@ -21,9 +21,35 @@ namespace VCE_Fishing
 
         public bool isZonePolluted = false;
 
+        public bool canFishInPollutedZone = false;
+
         public bool isZoneEmpty = true;
 
         public bool someoneFishing = false;
+
+        public bool AllowFishing
+        {
+            get
+            {
+                if (someoneFishing)
+                {
+                    return false;
+                }
+                if (!allowFishing)
+                {
+                    return false;
+                }
+                if (!isZoneBigEnough)
+                {
+                    return false;
+                }
+                if (isZoneEmpty)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
 
 
         private static List<Color> fishingZoneColors = new List<Color>();
@@ -46,10 +72,7 @@ namespace VCE_Fishing
         {
             get
             {
-               
                 return NextFishingZoneColor();
-
-
             }
         }
 
@@ -83,51 +106,51 @@ namespace VCE_Fishing
 
         
 
-        public void initialSetZoneFishList()
+        public void InitialSetZoneFishList()
         {
+            fishInThisZone = new();
             isZonePolluted = false;
-            if (ModsConfig.BiotechActive)
-            {
-
-                foreach (IntVec3 cell in this.cells)
-                {
-                    
-                    if (cell.IsPolluted(this.Map))
-                    {
-                       
-                        isZonePolluted = true;
-                    }
-                   
-                }
-            }
             if (this.cells.Count < Options.VCE_Fishing_Settings.VCEF_minimumZoneSize)
             {
                 isZoneBigEnough = false;
             }
-            else isZoneBigEnough = true;
-
-            
-            
-
-            fishInThisZone.Clear();
-
-            bool considerPrecepts = false;
-            Ideo ideo = null;
-
-            if (ModsConfig.IdeologyActive)
+            else
             {
-                ideo = Current.Game.World.factionManager.OfPlayer.ideos.PrimaryIdeo;
-                considerPrecepts = true;               
-
-            }
-            if (!isZonePolluted)
-            {
+                isZoneBigEnough = true;
+                if (ModsConfig.BiotechActive)
+                {
+                    foreach (IntVec3 cell in this.cells)
+                    {
+                        if (cell.IsPolluted(this.Map))
+                        {
+                            isZonePolluted = true;
+                            break;
+                        }
+                    }
+                }
+                bool considerPrecepts = false;
+                Ideo ideo = null;
+                if (ModsConfig.IdeologyActive)
+                {
+                    ideo = Current.Game.World.factionManager.OfPlayer.ideos.PrimaryIdeo;
+                    considerPrecepts = true;
+                }
+                int index = 0;
+                while (index < cells.Count)
+                {
+                    if (cells[index].GetTerrain(Map) == TerrainDefOf.WaterOceanDeep || cells[index].GetTerrain(Map) == TerrainDefOf.WaterOceanShallow)
+                    {
+                        isOcean = true;
+                        break;
+                    }
+                    index++;
+                    isOcean = false;
+                }
                 foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == this.fishSizeToCatch))
                 {
                     bool flagNoPrecepts = false;
                     if (considerPrecepts && element.preceptsRequired != null)
                     {
-
                         foreach (string requiredPrecept in element.preceptsRequired)
                         {
                             if (ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail(requiredPrecept)))
@@ -135,47 +158,54 @@ namespace VCE_Fishing
                                 flagNoPrecepts = true;
                             }
                         }
-
                     }
                     else { flagNoPrecepts = true; }
-
                     if (flagNoPrecepts)
                     {
-                        foreach (string biomeTemp in element.allowedBiomes)
+                        if (element.anyBiomeAllowed)
                         {
-
-                            foreach (BiomeTempDef biometempdef in DefDatabase<BiomeTempDef>.AllDefs.Where(biometempdef => biometempdef.biomeTempLabel == biomeTemp))
+                            AddFish(element);
+                        }
+                        else
+                        {
+                            foreach (string biomeTemp in element.allowedBiomes)
                             {
-                                foreach (string biome in biometempdef.biomes)
+                                foreach (BiomeTempDef biometempdef in DefDatabase<BiomeTempDef>.AllDefs.Where(biometempdef => biometempdef.biomeTempLabel == biomeTemp))
                                 {
-
-
-                                    if (this.Map.Biome.defName == biome)
+                                    foreach (string biome in biometempdef.biomes)
                                     {
-                                        if (this.isOcean && element.canBeSaltwater)
+                                        if (this.Map.Biome.defName == biome)
                                         {
-                                            this.fishInThisZone.Add(element.thingDef);
-                                        }
-                                        if (!this.isOcean && element.canBeFreshwater)
-                                        {
-                                            this.fishInThisZone.Add(element.thingDef);
-
+                                            AddFish(element);
                                         }
                                     }
                                 }
                             }
                         }
-
-
                     }
-
                 }
             }
-            
             if (fishInThisZone.Count > 0)
             {
                 isZoneEmpty = false;
-            } else isZoneEmpty = true;
+            } 
+            else isZoneEmpty = true;
+        }
+
+        private void AddFish(FishDef element)
+        {
+            if (!element.allowPolluted && isZonePolluted || element.onlyPolluted && !isZonePolluted)
+            {
+                return;
+            }
+            if (this.isOcean && element.canBeSaltwater)
+            {
+                this.fishInThisZone.Add(element.thingDef);
+            }
+            if (!this.isOcean && element.canBeFreshwater)
+            {
+                this.fishInThisZone.Add(element.thingDef);
+            }
         }
 
         public Zone_Fishing()
@@ -185,7 +215,7 @@ namespace VCE_Fishing
 
         public Zone_Fishing(ZoneManager zoneManager) : base("VCEF_FishingGrowingZone".Translate(), zoneManager)
         {
-            initialSetZoneFishList();
+            InitialSetZoneFishList();
         }
 
         public override void ExposeData()
@@ -197,64 +227,51 @@ namespace VCE_Fishing
             Scribe_Values.Look<bool>(ref this.isOcean, "isOcean", false, false);
             Scribe_Values.Look<bool>(ref this.isZoneBigEnough, "isZoneBigEnough", true, false);
             Scribe_Values.Look<bool>(ref this.isZoneEmpty, "isZoneEmpty", true, false);
-
-
-
         }
 
 
         public override string GetInspectString()
         {
             string text = string.Empty;
-
-            if (isZonePolluted)
+            //if (isZonePolluted)
+            //{
+            //    text += "VCEF_TooPolluted".Translate();
+            //}
+            //else {
+            //}
+            if (isZoneBigEnough)
             {
-                text += "VCEF_TooPolluted".Translate();
-            }
-            else {
-                if (isZoneBigEnough)
+                if (!isZoneEmpty)
                 {
-                    if (!isZoneEmpty)
+                    text += "VCEF_ZoneSetTo".Translate(this.cells.Count) + ": " + GetFishToCatch().ToString();
+                    if (this.fishInThisZone != null)
                     {
-                        text += "VCEF_ZoneSetTo".Translate(this.cells.Count) + ": " + GetFishToCatch().ToString();
-                        if (this.fishInThisZone != null)
+                        text += "\n" + "VCEF_FishesInThisZone".Translate();
+                        IList<string> fishInThisZoneString = new List<string>();
+                        foreach (ThingDef fish in this.fishInThisZone)
                         {
-                            text += "\n" + "VCEF_FishesInThisZone".Translate();
-                            IList<string> fishInThisZoneString = new List<string>();
-                            foreach (ThingDef fish in this.fishInThisZone)
-                            {
-                                fishInThisZoneString.Add(fish.label);
-                            }
-                            string[] array = fishInThisZoneString.ToArray();
-                            string joined = string.Join(", ", array);
-                            text += joined;
+                            fishInThisZoneString.Add(fish.label);
                         }
-                        text += "\n" + "VCEF_IsZoneOceanZone".Translate();
-                        if (this.isOcean)
-                        {
-                            text += "VCEF_Yes".Translate();
-                        }
-                        else text += "VCEF_No".Translate();
-
-
+                        string[] array = fishInThisZoneString.ToArray();
+                        string joined = string.Join(", ", array);
+                        text += joined;
                     }
-                    else
+                    text += "\n" + "VCEF_IsZoneOceanZone".Translate();
+                    if (this.isOcean)
                     {
-                        text += "VCEF_NoFish".Translate();
+                        text += "VCEF_Yes".Translate();
                     }
-
-
+                    else text += "VCEF_No".Translate();
                 }
                 else
                 {
-                    text += "VCEF_ZoneTooSmall".Translate(this.cells.Count,Options.VCE_Fishing_Settings.VCEF_minimumZoneSize);
+                    text += "VCEF_NoFish".Translate();
                 }
             }
-
-
-            
-            
-
+            else
+            {
+                text += "VCEF_ZoneTooSmall".Translate(this.cells.Count, Options.VCE_Fishing_Settings.VCEF_minimumZoneSize);
+            }
             return text;
         }
 
@@ -267,22 +284,19 @@ namespace VCE_Fishing
             {
                 yield return g;
             }
-            
-                yield return FishToCatchSettableUtility.SetFishToCatchCommand(this, this.Map);
-                yield return new Command_Toggle
+            yield return FishToCatchSettableUtility.SetFishToCatchCommand(this, this.Map);
+            yield return new Command_Toggle
+            {
+                defaultLabel = "VCEF_CommandAllowFishing".Translate(),
+                defaultDesc = "VCEF_CommandAllowFishingDesc".Translate(),
+                hotKey = KeyBindingDefOf.Command_ItemForbid,
+                icon = ContentFinder<Texture2D>.Get("UI/Designators/VCEF_AllowFish", true),
+                isActive = (() => this.allowFishing),
+                toggleAction = delegate
                 {
-                    defaultLabel = "VCEF_CommandAllowFishing".Translate(),
-                    defaultDesc = "VCEF_CommandAllowFishingDesc".Translate(),
-                    hotKey = KeyBindingDefOf.Command_ItemForbid,
-                    icon = ContentFinder<Texture2D>.Get("UI/Designators/VCEF_AllowFish", true),
-                    isActive = (() => this.allowFishing),
-                    toggleAction = delegate
-                    {
-                        this.allowFishing = !this.allowFishing;
-                    }
-                };
-            
-
+                    this.allowFishing = !this.allowFishing;
+                }
+            };
         }
 
         [DebuggerHidden]
@@ -293,10 +307,7 @@ namespace VCE_Fishing
 
         public FishSizeCategory GetFishToCatch()
         {
-           
-                return this.fishSizeToCatch;
-           
-
+            return this.fishSizeToCatch;
         }
 
         public void SetFishToCatch(FishSizeCategory fishSizeDef)
@@ -304,7 +315,6 @@ namespace VCE_Fishing
             this.fishSizeToCatch = fishSizeDef;
         }
 
-      
     }
 }
 
