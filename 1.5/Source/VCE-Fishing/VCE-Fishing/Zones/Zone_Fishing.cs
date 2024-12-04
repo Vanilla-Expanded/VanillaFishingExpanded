@@ -108,6 +108,7 @@ namespace VCE_Fishing
 
         public void InitialSetZoneFishList()
         {
+            fishInThisZone = new();
             isZonePolluted = false;
             if (ModsConfig.BiotechActive)
             {
@@ -124,49 +125,59 @@ namespace VCE_Fishing
             {
                 isZoneBigEnough = false;
             }
-            else isZoneBigEnough = true;
-            fishInThisZone.Clear();
-            bool considerPrecepts = false;
-            Ideo ideo = null;
-            if (ModsConfig.IdeologyActive)
+            else
             {
-                ideo = Current.Game.World.factionManager.OfPlayer.ideos.PrimaryIdeo;
-                considerPrecepts = true;               
-            }
-            //if (!isZonePolluted)
-            //{
-            //}
-            foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == this.fishSizeToCatch))
-            {
-                bool flagNoPrecepts = false;
-                if (considerPrecepts && element.preceptsRequired != null)
+                isZoneBigEnough = true;
+                bool considerPrecepts = false;
+                Ideo ideo = null;
+                if (ModsConfig.IdeologyActive)
                 {
-                    foreach (string requiredPrecept in element.preceptsRequired)
+                    ideo = Current.Game.World.factionManager.OfPlayer.ideos.PrimaryIdeo;
+                    considerPrecepts = true;
+                }
+                int index = 0;
+                while (index < cells.Count)
+                {
+                    if (cells[index].GetTerrain(Map) == TerrainDefOf.WaterOceanDeep || cells[index].GetTerrain(Map) == TerrainDefOf.WaterOceanShallow)
                     {
-                        if (ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail(requiredPrecept)))
+                        isOcean = true;
+                        break;
+                    }
+                    index++;
+                    isOcean = false;
+                }
+                foreach (FishDef element in DefDatabase<FishDef>.AllDefs.Where(element => element.fishSizeCategory == this.fishSizeToCatch))
+                {
+                    bool flagNoPrecepts = false;
+                    if (considerPrecepts && element.preceptsRequired != null)
+                    {
+                        foreach (string requiredPrecept in element.preceptsRequired)
                         {
-                            flagNoPrecepts = true;
+                            if (ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail(requiredPrecept)))
+                            {
+                                flagNoPrecepts = true;
+                            }
                         }
                     }
-                }
-                else { flagNoPrecepts = true; }
-                if (flagNoPrecepts)
-                {
-                    if (element.anyBiomeAllowed)
+                    else { flagNoPrecepts = true; }
+                    if (flagNoPrecepts)
                     {
-                        AddFish(element);
-                    }
-                    else
-                    {
-                        foreach (string biomeTemp in element.allowedBiomes)
+                        if (element.anyBiomeAllowed)
                         {
-                            foreach (BiomeTempDef biometempdef in DefDatabase<BiomeTempDef>.AllDefs.Where(biometempdef => biometempdef.biomeTempLabel == biomeTemp))
+                            AddFish(element);
+                        }
+                        else
+                        {
+                            foreach (string biomeTemp in element.allowedBiomes)
                             {
-                                foreach (string biome in biometempdef.biomes)
+                                foreach (BiomeTempDef biometempdef in DefDatabase<BiomeTempDef>.AllDefs.Where(biometempdef => biometempdef.biomeTempLabel == biomeTemp))
                                 {
-                                    if (this.Map.Biome.defName == biome)
+                                    foreach (string biome in biometempdef.biomes)
                                     {
-                                        AddFish(element);
+                                        if (this.Map.Biome.defName == biome)
+                                        {
+                                            AddFish(element);
+                                        }
                                     }
                                 }
                             }
