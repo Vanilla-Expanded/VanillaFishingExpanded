@@ -23,55 +23,24 @@ namespace VCE_Fishing
         public override IEnumerable<IntVec3> PotentialWorkCellsGlobal(Pawn pawn)
         {
             Danger maxDanger = pawn.NormalMaxDanger();
-            
-           
             List<Zone> zonesList = pawn.Map.zoneManager.AllZones;
             for (int j = 0; j < zonesList.Count; j++)
             {
-                Zone_Fishing fishingZone = zonesList[j] as Zone_Fishing;
-                if (fishingZone != null)
+                if (zonesList[j] is Zone_Fishing fishingZone)
                 {
                     if (fishingZone.cells.Count == 0)
                     {
                         Log.ErrorOnce("Fishing zone has 0 cells (this should never happen): " + fishingZone, -563487);
                     }
-                    if (!fishingZone.someoneFishing) {
-                        if (fishingZone.allowFishing)
+                    if (fishingZone.AllowFishing && !fishingZone.ContainsStaticFire && pawn.CanReserveAndReach(fishingZone.Cells[0], PathEndMode.OnCell, maxDanger))
+                    {
+                        for (int k = 0; k < fishingZone.cells.Count; k++)
                         {
-                            if (!fishingZone.isZonePolluted)
-                            {
-                                if (fishingZone.isZoneBigEnough)
-                                {
-                                    if (!fishingZone.isZoneEmpty)
-                                    {
-                                        if (!fishingZone.ContainsStaticFire)
-                                        {
-                                            if (pawn.CanReserveAndReach(fishingZone.Cells[0], PathEndMode.OnCell, maxDanger))
-                                            {
-                                                for (int k = 0; k < fishingZone.cells.Count; k++)
-                                                {
-                                                    yield return fishingZone.cells[k];
-                                                }
-
-                                            }
-                                        }
-
-
-                                    }
-                                }
-
-
-
-                            }
-
+                            yield return fishingZone.cells[k];
                         }
-
                     }
-                    
-                    
                 }
             }
-           
         }
 
         public override Job JobOnCell(Pawn pawn, IntVec3 c, bool forced = false)

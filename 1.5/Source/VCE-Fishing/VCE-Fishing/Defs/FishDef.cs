@@ -17,6 +17,8 @@ namespace VCE_Fishing
         public float commonality = 1f;
         public bool dontScaleFishingYieldWithSkill = false;
         public List<string> preceptsRequired = null;
-
+        public bool allowPolluted = false;
+        public bool onlyPolluted = false;
+        public bool anyBiomeAllowed = false;
     }
 }
