@@ -13,8 +13,8 @@ namespace VCE_Fishing
     public class FishingMapComponent : MapComponent
     {
 
-        private int fishTickProgress = 0;
-        private int fishTickMax = 1200;
+        public int fishTickProgress = 0;
+        public int fishTickMax = 1200;
 
         public FishingMapComponent(Map map) : base(map)
         {

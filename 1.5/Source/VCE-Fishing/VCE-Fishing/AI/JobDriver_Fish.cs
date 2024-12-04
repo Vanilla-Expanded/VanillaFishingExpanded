@@ -35,14 +35,10 @@ namespace VCE_Fishing
             Scribe_Defs.Look<ThingDef>(ref this.fishCaught, "fishCaught");
             Scribe_References.Look<Zone_Fishing>(ref this.fishingZone, "fishingZone");
             Scribe_Values.Look<bool>(ref this.caughtSomethingSpecial, "caughtSomethingSpecial", false, true);
-
-
-
         }
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-
             fishingZone = this.Map.zoneManager.ZoneAt(this.job.targetA.Cell) as Zone_Fishing;
             sizeAtBeginning = fishingZone.GetFishToCatch();
             caughtSomethingSpecial = false;
@@ -53,9 +49,7 @@ namespace VCE_Fishing
                 fishAmount = element.baseFishingYield;
                 dontScaleFishingYieldWithSkill = element.dontScaleFishingYieldWithSkill;
             }
-
             fishAmountWithSkill = CalculateFishAmountWithSkillAndConditions(fishAmount, dontScaleFishingYieldWithSkill);
-
             Pawn pawn = this.pawn;
             LocalTargetInfo target = this.job.targetA;
             Job job = this.job;
@@ -73,30 +67,21 @@ namespace VCE_Fishing
                     pawn.Reserve(moreTargetCells, job, 1, -1, null, errorOnFailed);
                     index++;
                 }
-
-
                 result = pawn.Reserve(target, job, 1, -1, null, errorOnFailed);
             }
             else
             {
-
                 result = false;
             }
             return result;
-
-
-
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-
             if (fishCaught == null)
             {
                 this.EndJobWith(JobCondition.Incompletable);
-
             }
-
             this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             this.FailOnBurningImmobile(TargetIndex.A);
             yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
@@ -104,7 +89,6 @@ namespace VCE_Fishing
             Toil fishToil = new Toil();
             if (this.pawn?.story?.traits?.HasTrait(InternalDefOf.VCEF_Fisherman)==true)
             {
-
                 this.pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(InternalDefOf.VCEF_FishingThought);
             }
             fishToil.tickAction = delegate ()
@@ -115,20 +99,14 @@ namespace VCE_Fishing
                     if (!fishingZone.isZoneBigEnough)
                     {
                         this.EndJobWith(JobCondition.Incompletable);
-
-
                     }
                 }
             };
-
             Rot4 pawnRotation = pawn.Rotation;
             IntVec3 facingCell = pawnRotation.FacingCell;
             EffecterDef effecter = SelectFishingMote(facingCell);
-
             fishToil.WithEffect(() => effecter, () => this.TargetA.Cell + facingCell);
-            
             fishToil.defaultCompleteMode = ToilCompleteMode.Delay;
-
             switch (sizeAtBeginning)
             {
                 case FishSizeCategory.Small:
@@ -146,7 +124,6 @@ namespace VCE_Fishing
                     fishToil.defaultDuration = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
                     break;
             }
-
             List<Apparel> wornApparel = this.pawn?.apparel?.WornApparel;
             if (wornApparel != null) {
                 for (int i = 0; i < wornApparel.Count; i++)
@@ -156,9 +133,7 @@ namespace VCE_Fishing
                         fishToil.defaultDuration = (int)(fishToil.defaultDuration * 0.8f);
                     }
                 }
-
             }
-  
             fishToil.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
             yield return fishToil.WithProgressBarToilDelay(TargetIndex.A, true);
             yield return new Toil
@@ -179,20 +154,16 @@ namespace VCE_Fishing
                         caughtSomethingSpecial = false;
                     }
                     StoragePriority currentPriority = StoreUtility.CurrentStoragePriorityOf(newFish);
-                    IntVec3 c;
-                    if (StoreUtility.TryFindBestBetterStoreCellFor(newFish, this.pawn, this.Map, currentPriority, this.pawn.Faction, out c, true))
+                    if (StoreUtility.TryFindBestBetterStoreCellFor(newFish, this.pawn, this.Map, currentPriority, this.pawn.Faction, out IntVec3 c, true))
                     {
                         this.job.SetTarget(TargetIndex.C, c);
                         this.job.SetTarget(TargetIndex.B, newFish);
                         this.job.count = newFish.stackCount;
-
                     }
                     else
                     {
                         this.EndJobWith(JobCondition.Incompletable);
-
                     }
-
                 },
                 defaultCompleteMode = ToilCompleteMode.Instant
             };
@@ -205,30 +176,25 @@ namespace VCE_Fishing
                 Toil carryToCell = Toils_Haul.CarryHauledThingToCell(TargetIndex.C);
                 yield return carryToCell;
                 yield return Toils_Haul.PlaceHauledThingInCell(TargetIndex.C, carryToCell, true);
-
             }
-
             yield break;
-
-
         }
 
         public int CalculateFishAmountWithSkillAndConditions(int amount, bool dontScaleFishingYieldWithSkill)
         {
-            int fishAmountFinal = 0;
             if (dontScaleFishingYieldWithSkill)
             {
                 return amount;
             }
-            if (this.pawn.IsColonyMech) {
+            if (this.pawn.IsColonyMech)
+            {
                 fishingSkill = 10;
-            } else
+            } 
+            else
             {
                 fishingSkill = this.pawn.skills.AverageOfRelevantSkillsFor(InternalDefOf.VCEF_Fishing);
             }
-
-            
-
+            int fishAmountFinal;
             if (fishingSkill >= minFishingSkillForMinYield)
             {
                 fishAmountFinal = amount + (int)((fishingSkill - minFishingSkillForMinYield) / 2);
@@ -238,26 +204,16 @@ namespace VCE_Fishing
                 fishAmountFinal = (int)(amount - (minFishingSkillForMinYield - fishingSkill));
             }
             float currentTempInMap = this.Map.mapTemperature.OutdoorTemp;
-
             if (currentTempInMap < Options.VCE_Fishing_Settings.VCEF_minMapTempForLowFish)
             {
-
-
                 fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(Options.VCE_Fishing_Settings.VCEF_minMapTempForLowFish - 20f, Options.VCE_Fishing_Settings.VCEF_minMapTempForLowFish, currentTempInMap));
-
             }
             else if (currentTempInMap > Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish)
             {
-
-
                 fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish + 15, Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish, currentTempInMap));
-
             }
-
             if (fishAmountFinal < 1) { fishAmountFinal = 1; }
-
             return fishAmountFinal;
-
         }
 
 
@@ -276,19 +232,14 @@ namespace VCE_Fishing
                     }
                     caughtSomethingSpecial = true;
                     return tempSpecialFish.RandomElementByWeight(((FishDef s) => s.commonality)).thingDef;
-
                 }
                 else
                 {
                     ThingDef fishCaught = fishingZone.fishInThisZone.RandomElement();
                     return fishCaught;
-
                 }
-
             }
             else return null;
-
-
         }
 
         public EffecterDef SelectFishingMote(IntVec3 facingCell)
@@ -297,8 +248,6 @@ namespace VCE_Fishing
             string mechString = this.pawn.IsColonyMech ? "_Mech" : "";
             string mechNew = (this.pawn.IsColonyMech && this.pawn.ageTracker.AgeChronologicalYears<100) ? "_New" : "";
             string rotationString = "";
-
-
             if (facingCell == new IntVec3(0, 0, 1))
             {
                 rotationString = "_North";
@@ -306,7 +255,6 @@ namespace VCE_Fishing
             else if (facingCell == new IntVec3(1, 0, 0))
             {
                 rotationString = "_East";
-
             }
             else if (facingCell == new IntVec3(0, 0, -1))
             {

@@ -15,7 +15,6 @@ namespace VCE_Fishing
             {
                 return PathEndMode.Touch;
             }
-
         }
 
 
@@ -45,9 +44,7 @@ namespace VCE_Fishing
 
         public override Job JobOnCell(Pawn pawn, IntVec3 c, bool forced = false)
         {
-           
             LocalTargetInfo target = c;
-           
             if (!pawn.CanReserve(target, 1, -1, null, false))
             {
                 return null;

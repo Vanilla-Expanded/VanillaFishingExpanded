@@ -23,8 +23,6 @@ namespace VCE_Fishing
             this.defaultDesc = "VCEF_FishingGrowingZoneDesc".Translate();
             this.icon = ContentFinder<Texture2D>.Get("UI/Designators/VCEF_ZoneCreate_Fishing", true);
             this.hotKey = KeyBindingDefOf.Misc2;
-
-         
         }
 
         public override AcceptanceReport CanDesignateCell(IntVec3 c)
@@ -33,9 +31,7 @@ namespace VCE_Fishing
             {
                 return false;
             }
-
             TerrainDef terrainDef = Map.terrainGrid.TerrainAt(c);
-
             foreach (FishableTerrainDef element in DefDatabase<FishableTerrainDef>.AllDefs)
             {
                 foreach (string allowed in element.allowedTerrains)
@@ -44,23 +40,18 @@ namespace VCE_Fishing
                     {
                         return true;
 
-                    }else if ((allowed == terrainDef.defName) && element.addEvenIfNotPassable)
+                    }
+                    else if ((allowed == terrainDef.defName) && element.addEvenIfNotPassable)
                     {
                         return true;
-
                     }
-
                 }
             }
             return false;
-
-
-
         }
                 
         protected override Zone MakeNewZone()
         {
-           
             return new Zone_Fishing(Find.CurrentMap.zoneManager);
         }
     }

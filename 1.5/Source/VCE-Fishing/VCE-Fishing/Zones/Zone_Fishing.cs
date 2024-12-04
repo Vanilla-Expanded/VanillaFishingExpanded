@@ -31,7 +31,7 @@ namespace VCE_Fishing
         {
             get
             {
-                if (!someoneFishing)
+                if (someoneFishing)
                 {
                     return false;
                 }
@@ -43,7 +43,7 @@ namespace VCE_Fishing
                 {
                     return false;
                 }
-                if (!isZoneEmpty)
+                if (isZoneEmpty)
                 {
                     return false;
                 }
