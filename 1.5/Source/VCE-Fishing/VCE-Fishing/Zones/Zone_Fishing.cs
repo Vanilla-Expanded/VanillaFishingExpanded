@@ -110,17 +110,6 @@ namespace VCE_Fishing
         {
             fishInThisZone = new();
             isZonePolluted = false;
-            if (ModsConfig.BiotechActive)
-            {
-                foreach (IntVec3 cell in this.cells)
-                {
-                    if (cell.IsPolluted(this.Map))
-                    {
-                        isZonePolluted = true;
-                        break;
-                    }
-                }
-            }
             if (this.cells.Count < Options.VCE_Fishing_Settings.VCEF_minimumZoneSize)
             {
                 isZoneBigEnough = false;
@@ -128,6 +117,17 @@ namespace VCE_Fishing
             else
             {
                 isZoneBigEnough = true;
+                if (ModsConfig.BiotechActive)
+                {
+                    foreach (IntVec3 cell in this.cells)
+                    {
+                        if (cell.IsPolluted(this.Map))
+                        {
+                            isZonePolluted = true;
+                            break;
+                        }
+                    }
+                }
                 bool considerPrecepts = false;
                 Ideo ideo = null;
                 if (ModsConfig.IdeologyActive)
