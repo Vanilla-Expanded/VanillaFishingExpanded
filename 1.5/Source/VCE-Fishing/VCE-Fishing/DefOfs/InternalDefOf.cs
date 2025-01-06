@@ -22,6 +22,9 @@ namespace VCE_Fishing
 
 		public static ThingCategoryDef VCEF_RawFishCategory;
 
+		public static StatDef VCEF_FishingSpeedFactor;
+        public static StatDef VCEF_FishingYieldFactor;
+        public static StatDef VCEF_FishingLuckOffset;
 
         static InternalDefOf()
 		{

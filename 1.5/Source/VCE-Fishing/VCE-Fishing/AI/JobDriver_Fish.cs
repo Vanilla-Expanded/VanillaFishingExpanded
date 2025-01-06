@@ -107,21 +107,25 @@ namespace VCE_Fishing
             EffecterDef effecter = SelectFishingMote(facingCell);
             fishToil.WithEffect(() => effecter, () => this.TargetA.Cell + facingCell);
             fishToil.defaultCompleteMode = ToilCompleteMode.Delay;
+            int duration;
             switch (sizeAtBeginning)
             {
                 case FishSizeCategory.Small:
-                    fishToil.defaultDuration = (int)(-(Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor / 20) * fishingSkill + Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 1.5);
+                    duration = (int)(-(Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor / 20) * fishingSkill + Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 1.5);
+                    fishToil.defaultDuration = (int)(duration * pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
                     break;
                 case FishSizeCategory.Medium:
                     int mediumFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
-                    fishToil.defaultDuration = (int)(-(mediumFishDurationFactor / 20) * fishingSkill + mediumFishDurationFactor * 1.5);
+                    duration = (int)(-(mediumFishDurationFactor / 20) * fishingSkill + mediumFishDurationFactor * 1.5);
+                    fishToil.defaultDuration = (int)(duration * pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
                     break;
                 case FishSizeCategory.Large:
                     int largeFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 3;
-                    fishToil.defaultDuration = (int)(-(largeFishDurationFactor / 20) * fishingSkill + largeFishDurationFactor * 1.5);
+                    duration = (int)(-(largeFishDurationFactor / 20) * fishingSkill + largeFishDurationFactor * 1.5);
+                    fishToil.defaultDuration = (int)(duration * pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
                     break;
                 default:
-                    fishToil.defaultDuration = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
+                    fishToil.defaultDuration = (int)(Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2 * pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
                     break;
             }
             List<Apparel> wornApparel = this.pawn?.apparel?.WornApparel;
@@ -212,6 +216,9 @@ namespace VCE_Fishing
             {
                 fishAmountFinal = (int)(fishAmountFinal * Mathf.InverseLerp(Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish + 15, Options.VCE_Fishing_Settings.VCEF_maxMapTempForLowFish, currentTempInMap));
             }
+            float statMultiplier = pawn.GetStatValue(InternalDefOf.VCEF_FishingYieldFactor);
+            fishAmountFinal = (int)(fishAmountFinal*statMultiplier);
+
             if (fishAmountFinal < 1) { fishAmountFinal = 1; }
             return fishAmountFinal;
         }
@@ -221,8 +228,8 @@ namespace VCE_Fishing
         {
             if (fishingZone.fishInThisZone.Count > 0)
             {
-                //Log.Message(((float)(100 - Options.VCE_Fishing_Settings.VCEF_chanceForSpecials) / 100).ToString());
-                if (rand.NextDouble() > ((float)(100 - Options.VCE_Fishing_Settings.VCEF_chanceForSpecials) / 100))
+                
+                if (Rand.Chance((float)Options.VCE_Fishing_Settings.VCEF_chanceForSpecials / 100 + pawn.GetStatValue(InternalDefOf.VCEF_FishingLuckOffset)))
                 {
                     List<FishDef> tempSpecialFish = new List<FishDef>();
                     tempSpecialFish.Clear();
