@@ -112,20 +112,20 @@ namespace VCE_Fishing
             {
                 case FishSizeCategory.Small:
                     duration = (int)(-(Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor / 20) * fishingSkill + Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 1.5);
-                    fishToil.defaultDuration = (int)(duration * pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
+                    fishToil.defaultDuration = (int)(duration / pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
                     break;
                 case FishSizeCategory.Medium:
                     int mediumFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2;
                     duration = (int)(-(mediumFishDurationFactor / 20) * fishingSkill + mediumFishDurationFactor * 1.5);
-                    fishToil.defaultDuration = (int)(duration * pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
+                    fishToil.defaultDuration = (int)(duration / pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
                     break;
                 case FishSizeCategory.Large:
                     int largeFishDurationFactor = Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 3;
                     duration = (int)(-(largeFishDurationFactor / 20) * fishingSkill + largeFishDurationFactor * 1.5);
-                    fishToil.defaultDuration = (int)(duration * pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
+                    fishToil.defaultDuration = (int)(duration / pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
                     break;
                 default:
-                    fishToil.defaultDuration = (int)(Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2 * pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
+                    fishToil.defaultDuration = (int)(Options.VCE_Fishing_Settings.VCEF_smallFishDurationFactor * 2 / pawn.GetStatValue(InternalDefOf.VCEF_FishingSpeedFactor));
                     break;
             }
             List<Apparel> wornApparel = this.pawn?.apparel?.WornApparel;
