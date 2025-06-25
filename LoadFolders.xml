@@ -11,8 +11,8 @@
     </v1.5>
 	<v1.6>
         <li>/</li>
-        <li>1.6</li>
-		<li IfModActive="vanillaexpanded.achievements">1.6/Mods/VanillaAchievementsExpanded</li>
-		<li IfModActive="vanillaexpanded.skills">1.6/Mods/VanillaSkillsExpanded</li>
+     
+		<li IfModActive="Ludeon.RimWorld.Odyssey">1.6Odyssey</li>	
+		<li IfModNotActive="Ludeon.RimWorld.Odyssey">1.6NotOdyssey</li>	
     </v1.6>
 </LoadFolders>

@@ -46,7 +46,5 @@ Extra compatibility with Alpha Biomes (19 specific fish)
 See on Github
 
 	</description>
-	<incompatibleWith>
-		<li>Ludeon.RimWorld.Odyssey</li>
-	</incompatibleWith>
+	
 </ModMetaData>

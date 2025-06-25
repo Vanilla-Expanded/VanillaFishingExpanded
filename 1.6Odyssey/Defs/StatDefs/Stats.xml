@@ -1,0 +1,15 @@
+<Defs>
+
+	<StatDef>
+		<defName>VCEF_FishingLuckOffset</defName>
+		<label>fishing luck</label>
+		<description>The chance for every fishing attempt to fish a special item instead of a regular fish is increased by this offset.</description>
+		<category>PawnWork</category>
+		<defaultBaseValue>0</defaultBaseValue>
+		<hideAtValue>0</hideAtValue>
+		<minValue>0</minValue>
+		<toStringStyle>PercentTwo</toStringStyle>
+		<displayPriorityInCategory>10002</displayPriorityInCategory>
+		<showDevelopmentalStageFilter>Adult</showDevelopmentalStageFilter>
+	</StatDef>
+</Defs>

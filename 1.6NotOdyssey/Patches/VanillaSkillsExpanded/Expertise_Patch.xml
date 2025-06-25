@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Skills Expanded</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs</xpath>
+			<value>
+				<VSE.Expertise.ExpertiseDef>
+					<defName>VCEF_Swiftcasting</defName>
+					<label>Swiftcasting</label>
+					<description>An expertise in fishing speed that reduces the time spent on fishing jobs.</description>
+					<skill>Animals</skill>
+					<statOffsets>
+						<VCEF_FishingSpeedFactor>0.05</VCEF_FishingSpeedFactor>
+					</statOffsets>
+				</VSE.Expertise.ExpertiseDef>
+				<VSE.Expertise.ExpertiseDef>
+					<defName>VCEF_Catchmastery</defName>
+					<label>Catchmastery</label>
+					<skill>Animals</skill>
+					<description>An expertise in fish catching that increases the amount of fish caught.</description>
+					<statOffsets>
+						<VCEF_FishingYieldFactor>0.05</VCEF_FishingYieldFactor>
+					</statOffsets>
+				</VSE.Expertise.ExpertiseDef>
+				<VSE.Expertise.ExpertiseDef>
+					<defName>VCEF_Aquabounty</defName>
+					<label>Aquabounty</label>
+					<skill>Animals</skill>
+					<description>An expertise in getting lucky when fishing, catching special items that are not fish.</description>
+					<statOffsets>
+						<VCEF_FishingLuckOffset>0.01</VCEF_FishingLuckOffset>
+					</statOffsets>
+				</VSE.Expertise.ExpertiseDef>
+			</value>
+		</match>
+	</Operation>
+</Patch>
+
