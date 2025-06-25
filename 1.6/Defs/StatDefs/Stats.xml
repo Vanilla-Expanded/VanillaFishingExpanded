@@ -1,0 +1,38 @@
+<Defs>
+	<StatDef>
+		<defName>VCEF_FishingSpeedFactor</defName>
+		<label>fishing speed</label>
+		<description>The speed at which a person can fish is multiplied by this factor.</description>
+		<category>PawnWork</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<displayPriorityInCategory>10000</displayPriorityInCategory>
+		<showDevelopmentalStageFilter>Adult</showDevelopmentalStageFilter>
+	</StatDef>
+	<StatDef>
+		<defName>VCEF_FishingYieldFactor</defName>
+		<label>fishing yield</label>
+		<description>The fishing yield of a person is multiplied by this factor.</description>
+		<category>PawnWork</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<hideAtValue>1</hideAtValue>
+		<minValue>0</minValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<displayPriorityInCategory>10001</displayPriorityInCategory>
+		<showDevelopmentalStageFilter>Adult</showDevelopmentalStageFilter>
+	</StatDef>
+	<StatDef>
+		<defName>VCEF_FishingLuckOffset</defName>
+		<label>fishing luck</label>
+		<description>The chance for every fishing attempt to fish a special item instead of a regular fish is increased by this offset.</description>
+		<category>PawnWork</category>
+		<defaultBaseValue>0</defaultBaseValue>
+		<hideAtValue>0</hideAtValue>
+		<minValue>0</minValue>
+		<toStringStyle>PercentTwo</toStringStyle>
+		<displayPriorityInCategory>10002</displayPriorityInCategory>
+		<showDevelopmentalStageFilter>Adult</showDevelopmentalStageFilter>
+	</StatDef>
+</Defs>
