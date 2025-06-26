@@ -9,6 +9,8 @@ using System;
 using VCE_Fishing.Options;
 using System.Reflection;
 using RimWorld.QuestGen;
+using System.Security.Cryptography;
+using System.Security.Principal;
 
 
 namespace VCE_Fishing
@@ -60,8 +62,11 @@ namespace VCE_Fishing
     public static class VCE_Fishing_JobDriver_Fish_CompleteFishingToil_PostFix_Patch
     {
 
+        public static List<ThingDef> adeptCatches = new List<ThingDef>() { InternalDefOf.VCEF_Crayfish,InternalDefOf.VCEF_ButterFish,
+            InternalDefOf.VCEF_FreshwaterStingray,InternalDefOf.VCEF_FlyingFish,InternalDefOf.VCEF_Arapaima,InternalDefOf.VCEF_ShortfinMakoShark};
+
         [HarmonyPostfix]
-        public static void GiveJoyIfNeeded(ref Toil __result, JobDriver_Fish __instance)
+        public static void CompleteFishingToilPostActions(ref Toil __result, JobDriver_Fish __instance)
         {
 
             __result.AddFinishAction(delegate
@@ -69,6 +74,17 @@ namespace VCE_Fishing
                 if (ModLister.IdeologyInstalled && __instance.pawn?.ideo?.Ideo?.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail("VME_Recreation_Fishing")) == true)
                 {
                     __instance.pawn?.needs?.joy?.GainJoy(0.1f, JoyKindDefOf.Meditative);
+                }
+
+                if (ModLister.IdeologyInstalled && __instance.pawn?.ideo?.Ideo?.HasPrecept(DefDatabase<PreceptDef>.GetNamedSilentFail("VME_Fishing_Adept")) == true)
+                {
+                    if (Rand.Chance(0.2f))
+                    {
+                        Thing thing = ThingMaker.MakeThing(adeptCatches.RandomElement());
+                        thing.stackCount = 10;
+                        GenPlace.TryPlaceThing(thing, __instance.pawn.Position, __instance.pawn.Map, ThingPlaceMode.Near);
+                    }
+                    
                 }
 
                 if (__instance.pawn?.story?.traits?.HasTrait(InternalDefOf.VCEF_Fisherman) == true)
