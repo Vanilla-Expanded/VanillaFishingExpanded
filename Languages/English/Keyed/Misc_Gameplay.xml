@@ -38,6 +38,10 @@
 
 	<VCEF_chanceForSpecials>Chance to get an special item instead of fish</VCEF_chanceForSpecials>
 	<VCEF_chanceForSpecialsTooltip>Chance to get an special item instead of fish. Default is 1% per fishing operation.</VCEF_chanceForSpecialsTooltip>
+	<VCEF_chanceForSpecialsTooltip_Odyssey>Chance to get an special item instead of fish. Default is 1% per fishing operation. Bear in mind in Odyssey there is by default a 5 day timer between "rare" catches, that you can tweak via these options too.</VCEF_chanceForSpecialsTooltip_Odyssey>
+	
+	<VCEF_minDaysBetweenRareCatches>Minimum days between rare catches</VCEF_minDaysBetweenRareCatches>
+	<VCEF_minDaysBetweenRareCatchesTootip>By default in Odyssey "rare" catches can only happen when 5 days have passed since the last "rare" catch. You can change that minimum interval here.</VCEF_minDaysBetweenRareCatchesTootip>
 	
 	<VCEF_minMapTempForLowFish>Minimum map temperature for reduced fish yield</VCEF_minMapTempForLowFish>
 	<VCEF_minMapTempForLowFishTooltip>Minimum map temperature for reduced fish yield. Below this temperature fish yield will be greatly reduced. Default is 0ºC.</VCEF_minMapTempForLowFishTooltip>

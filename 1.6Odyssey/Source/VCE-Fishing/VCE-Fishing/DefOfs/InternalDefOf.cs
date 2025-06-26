@@ -18,6 +18,9 @@ namespace VCE_Fishing
 
         public static StatDef VCEF_FishingLuckOffset;
 
+		public static EffecterDef VCEF_Fishing_MechAncient;
+        public static EffecterDef VCEF_Fishing_MechNew;
+
         static InternalDefOf()
 		{
 			DefOfHelper.EnsureInitializedInCtor(typeof(InternalDefOf));

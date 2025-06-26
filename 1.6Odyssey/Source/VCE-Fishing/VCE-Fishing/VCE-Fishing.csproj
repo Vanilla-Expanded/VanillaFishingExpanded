@@ -296,7 +296,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefOfs\InternalDefOf.cs" />
+    <Compile Include="Harmony\FishingUtility_GetCatchesFor.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="Harmony\JobDriver_Fish_MakeNewToils.cs" />
+    <Compile Include="Harmony\JobDriver_Fish_CompleteFishingToil.cs" />
     <Compile Include="Options\Settings_Controller.cs" />
     <Compile Include="Options\VCE_Fishing_Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
