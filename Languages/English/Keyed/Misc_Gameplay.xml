@@ -49,6 +49,11 @@
 	<VCEF_maxMapTempForLowFish>Maximum map temperature for reduced fish yield</VCEF_maxMapTempForLowFish>
 	<VCEF_maxMapTempForLowFishTooltip>Maximum map temperature for reduced fish yield. Above this temperature fish yield will be greatly reduced. Default is 50ºC.</VCEF_maxMapTempForLowFishTooltip>
 	
+	<VCEF_fishingYieldMultiplier>Fishing Yield multiplier</VCEF_fishingYieldMultiplier>
+	<VCEF_fishingYieldMultiplierTooltip>The amount of fish caught will be scaled by this multiplier.</VCEF_fishingYieldMultiplierTooltip>
+	
+	<VCEF_fishingSpeedMultiplier>Fishing Speed multiplier</VCEF_fishingSpeedMultiplier>
+	<VCEF_fishingSpeedMultiplierTooltip>The speed to catch the fish will be scaled by this multiplier.</VCEF_fishingSpeedMultiplierTooltip>
 	
 	
 	<VCEF_dropFish>Fisher drops fish on the ground instead of hauling to stockpiles</VCEF_dropFish>

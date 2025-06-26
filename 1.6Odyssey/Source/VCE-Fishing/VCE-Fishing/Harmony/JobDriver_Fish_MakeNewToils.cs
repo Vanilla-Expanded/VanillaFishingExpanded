@@ -32,6 +32,8 @@ namespace VCE_Fishing
 
             FieldInfo field = AccessTools.Field(typeof(EffecterDefOf), nameof(EffecterDefOf.Fishing));
             var modifyEffecter = AccessTools.Method(typeof(VCE_Fishing_JobDriver_Fish_MakeNewToils_Patch), "ModifyEffecter");
+            var getStatValue = AccessTools.Method(typeof(StatExtension), "GetStatValue");
+            var getStatValueOptions = AccessTools.Method(typeof(VCE_Fishing_JobDriver_Fish_MakeNewToils_Patch), "GetStatValueOptions");
 
             for (var i = 0; i < codes.Count; i++)
             {
@@ -42,6 +44,12 @@ namespace VCE_Fishing
 
                     yield return new CodeInstruction(OpCodes.Ldloc_3);
                     yield return new CodeInstruction(OpCodes.Call, modifyEffecter);
+
+                }else if (codes[i].opcode == OpCodes.Call && codes[i].OperandIs(getStatValue))
+                {
+
+                    yield return new CodeInstruction(OpCodes.Call, getStatValueOptions);
+
 
                 }
 
@@ -65,6 +73,12 @@ namespace VCE_Fishing
                 }
             }
             return EffecterDefOf.Fishing;
+        }
+
+        public static float GetStatValueOptions(Pawn pawn, StatDef stat, bool applyPostProcess, int cacheStaleAfterTicks)
+        {
+
+            return pawn.GetStatValue(stat, applyPostProcess, cacheStaleAfterTicks) * VCE_Fishing_Settings.VCEF_fishingSpeedMultiplier;
         }
 
     }
