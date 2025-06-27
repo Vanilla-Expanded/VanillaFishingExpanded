@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!--Cold Biomes-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BiomeDef[defName="BorealForest" or defName="Tundra" or defName="ColdBog" or defName="IceSheet" or defName="SeaIce" or defName="GlacialPlain"]/fishTypes/freshwater_Common</xpath>
+		<value>
+			<VCEF_RawHerring MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawHerring>
+			<VCEF_RawTrout MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawTrout>
+			<VCEF_RawMinnow MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawMinnow>
+			<VCEF_RawKoi MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawKoi>
+			<VCEF_RawPerch MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawPerch>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BiomeDef[defName="BorealForest" or defName="Tundra" or defName="ColdBog" or defName="IceSheet" or defName="SeaIce" or defName="GlacialPlain"]/fishTypes/saltwater_Common</xpath>
+		<value>
+			<VCEF_RawAnchovy MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawAnchovy>
+			<VCEF_RawEel MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawEel>
+			<VCEF_RawClownfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawClownfish>
+			<VCEF_RawSprat MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawSprat>
+			<VCEF_RawAnglerfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawAnglerfish>
+			<VCEF_RawHaddock MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawHaddock>
+			<VCEF_RawPufferfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawPufferfish>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BiomeDef[defName="BorealForest" or defName="Tundra" or defName="ColdBog" or defName="IceSheet" or defName="SeaIce" or defName="GlacialPlain"]/fishTypes/saltwater_Uncommon</xpath>
+		<value>
+			<VCEF_RawHalibut MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawHalibut>
+			<VCEF_RawLobster MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawLobster>
+			<VCEF_RawSwordfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawSwordfish>
+		</value>
+	</Operation>
+	<!--Hot and tropical-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BiomeDef[defName="AridShrubland" or defName="Desert" or defName="ExtremeDesert" or defName="TropicalRainforest" or defName="TropicalSwamp" or defName="Glowforest" or defName="Grasslands" or defName="LavaField"]/fishTypes/freshwater_Common</xpath>
+		<value>
+			<VCEF_RawAngelfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawAngelfish>
+			<VCEF_RawHerring MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawHerring>
+			<VCEF_RawTrout MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawTrout>
+			<VCEF_RawMinnow MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawMinnow>
+			<VCEF_RawKoi MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawKoi>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BiomeDef[defName="AridShrubland" or defName="Desert" or defName="ExtremeDesert" or defName="TropicalRainforest" or defName="TropicalSwamp" or defName="Glowforest" or defName="Grasslands" or defName="LavaField"]/fishTypes/saltwater_Common</xpath>
+		<value>
+			<VCEF_RawEel MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawEel>
+			<VCEF_RawClownfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawClownfish>
+			<VCEF_RawSprat MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawSprat>
+			<VCEF_RawAnglerfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawAnglerfish>
+			<VCEF_RawPufferfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawPufferfish>
+		</value>
+	</Operation>
+	
+	<!--Temperate Biomes-->
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BiomeDef[defName="TemperateForest" or defName="TemperateSwamp"]/fishTypes/freshwater_Common</xpath>
+		<value>
+			<VCEF_RawAngelfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawAngelfish>
+			<VCEF_RawGoldfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawGoldfish>
+			<VCEF_RawHerring MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawHerring>
+			<VCEF_RawTrout MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawTrout>
+			<VCEF_RawMinnow MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawMinnow>
+			<VCEF_RawKoi MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawKoi>
+			<VCEF_RawPerch MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawPerch>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BiomeDef[defName="TemperateForest" or defName="TemperateSwamp"]/fishTypes/saltwater_Common</xpath>
+		<value>
+			<VCEF_RawAnchovy MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawAnchovy>
+			<VCEF_RawEel MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawEel>
+			<VCEF_RawClownfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawClownfish>
+			<VCEF_RawSprat MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawSprat>
+			<VCEF_RawAnglerfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawAnglerfish>
+			<VCEF_RawHaddock MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawHaddock>
+			<VCEF_RawPufferfish MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawPufferfish>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BiomeDef[defName="TemperateForest" or defName="TemperateSwamp"]/fishTypes/saltwater_Uncommon</xpath>
+		<value>
+			<VCEF_RawHalibut MayRequire="Ludeon.RimWorld.Odyssey">1</VCEF_RawHalibut>
+			
+		</value>
+	</Operation>
+</Patch>
+

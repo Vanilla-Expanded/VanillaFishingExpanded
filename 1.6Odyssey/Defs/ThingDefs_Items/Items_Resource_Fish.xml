@@ -120,6 +120,10 @@
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Halibut</texPath>
 		</graphicData>
+		<statBases>
+			<Nutrition>0.3</Nutrition>
+			
+		</statBases>
 	</ThingDef>
 	<!-- Herring -->
 	<ThingDef ParentName="FishBase">
@@ -155,6 +159,10 @@
 		<graphicData>
 			<texPath>Things/Item/Resource/VCEF_Lobster</texPath>
 		</graphicData>
+		<statBases>
+			<Nutrition>0.35</Nutrition>
+			<MarketValue>10</MarketValue>
+		</statBases>
 	</ThingDef>
 	<!-- Mackerel -->
 	<ThingDef ParentName="FishBase">
