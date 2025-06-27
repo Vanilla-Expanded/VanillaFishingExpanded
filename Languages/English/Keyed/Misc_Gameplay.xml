@@ -55,6 +55,11 @@
 	<VCEF_fishingSpeedMultiplier>Fishing Speed multiplier</VCEF_fishingSpeedMultiplier>
 	<VCEF_fishingSpeedMultiplierTooltip>The speed to catch the fish will be scaled by this multiplier.</VCEF_fishingSpeedMultiplierTooltip>
 	
+	<VCEF_maxFishPopulationMultiplier>Max fish population multiplier</VCEF_maxFishPopulationMultiplier>
+	<VCEF_maxFishPopulationMultiplierTooltip>In Odyssey, max fish population in a body of water is defined per biome. This multiplier will be applied to that limit.</VCEF_maxFishPopulationMultiplierTooltip>
+	
+	<VCEF_fishAmountMultiplier>Fish amount (in fishing zone) multiplier</VCEF_fishAmountMultiplier>
+	<VCEF_fishAmountMultiplierTooltip>Amount of fish that will be present on a fishing zone. This multiplier will be applied to that amount.</VCEF_fishAmountMultiplierTooltip>
 	
 	<VCEF_dropFish>Fisher drops fish on the ground instead of hauling to stockpiles</VCEF_dropFish>
 	

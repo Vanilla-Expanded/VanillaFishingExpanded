@@ -300,6 +300,8 @@
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="Harmony\JobDriver_Fish_MakeNewToils.cs" />
     <Compile Include="Harmony\JobDriver_Fish_CompleteFishingToil.cs" />
+    <Compile Include="Harmony\Tile_MaxFishPopulation.cs" />
+    <Compile Include="Harmony\WaterBody_Population.cs" />
     <Compile Include="Options\Settings_Controller.cs" />
     <Compile Include="Options\VCE_Fishing_Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
