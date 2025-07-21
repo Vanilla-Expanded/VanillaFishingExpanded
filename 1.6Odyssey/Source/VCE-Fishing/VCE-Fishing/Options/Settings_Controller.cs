@@ -1,21 +1,23 @@
 ﻿using RimWorld;
 using UnityEngine;
 using Verse;
+using VCE_Fishing.Options;
 
-namespace VCE_Fishing.Options
+namespace VCE_Fishing
 {
     class VCE_Fishing_Mod : Mod
     {
+        public static VCE_Fishing_Settings settings;
 
         public VCE_Fishing_Mod(ModContentPack content) : base(content)
         {
-            GetSettings<VCE_Fishing_Settings>();
+            settings = GetSettings<VCE_Fishing_Settings>();
         }
         public override string SettingsCategory() => "VE Fishing - Odyssey";
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
-            VCE_Fishing_Settings.DoWindowContents(inRect);
+            settings.DoWindowContents(inRect);
         }
     }
 }

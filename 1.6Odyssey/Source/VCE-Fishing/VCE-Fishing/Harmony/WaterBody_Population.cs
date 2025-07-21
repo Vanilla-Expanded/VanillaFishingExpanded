@@ -5,9 +5,9 @@ using System.Linq;
 using System.Reflection.Emit;
 using Verse;
 using Verse.AI;
-
-using RimWorld.Planet;
 using VCE_Fishing.Options;
+using RimWorld.Planet;
+
 
 
 
@@ -15,7 +15,7 @@ namespace VCE_Fishing
 {
 
     [HarmonyPatch(typeof(WaterBody), nameof(WaterBody.Population), MethodType.Getter)]
-    public static class VCE_WaterBody_Population_Patch
+    public static class VCE_Fishing_WaterBody_Population_Patch
     {
 
         [HarmonyPostfix]

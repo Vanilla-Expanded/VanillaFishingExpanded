@@ -41,7 +41,7 @@
 	<VCEF_chanceForSpecialsTooltip_Odyssey>Chance to get an special item instead of fish. Default is 1% per fishing operation. Bear in mind in Odyssey there is by default a 5 day timer between "rare" catches, that you can tweak via these options too.</VCEF_chanceForSpecialsTooltip_Odyssey>
 	
 	<VCEF_minDaysBetweenRareCatches>Minimum days between rare catches</VCEF_minDaysBetweenRareCatches>
-	<VCEF_minDaysBetweenRareCatchesTootip>By default in Odyssey "rare" catches can only happen when 5 days have passed since the last "rare" catch. You can change that minimum interval here.</VCEF_minDaysBetweenRareCatchesTootip>
+	<VCEF_minDaysBetweenRareCatchesTooltip>By default in Odyssey "rare" catches can only happen when 5 days have passed since the last "rare" catch. You can change that minimum interval here.</VCEF_minDaysBetweenRareCatchesTooltip>
 	
 	<VCEF_minMapTempForLowFish>Minimum map temperature for reduced fish yield</VCEF_minMapTempForLowFish>
 	<VCEF_minMapTempForLowFishTooltip>Minimum map temperature for reduced fish yield. Below this temperature fish yield will be greatly reduced. Default is 0ºC.</VCEF_minMapTempForLowFishTooltip>
@@ -61,9 +61,17 @@
 	<VCEF_fishAmountMultiplier>Fish amount (in fishing zone) multiplier</VCEF_fishAmountMultiplier>
 	<VCEF_fishAmountMultiplierTooltip>Amount of fish that will be present on a fishing zone. This multiplier will be applied to that amount.</VCEF_fishAmountMultiplierTooltip>
 	
+	<VCEF_chanceForNegativeOutcome>Chance for negative outcomes</VCEF_chanceForNegativeOutcome>
+	<VCEF_chanceForNegativeOutcomeTooltip>By default there is a 2% chance that any fishing will result in a negative outcome.</VCEF_chanceForNegativeOutcomeTooltip>
+	
 	<VCEF_dropFish>Fisher drops fish on the ground instead of hauling to stockpiles</VCEF_dropFish>
 	
-	<!-- Miotech -->
+	<VCEF_Reset_Plain>Reset all</VCEF_Reset_Plain>
+	
+	<VCEF_DisableGillRot>Disable Gill Rot</VCEF_DisableGillRot>
+	<VCEF_DisableGillRotDesc>If checked, it will make Gill Rit impossible to happen under any circumstances.</VCEF_DisableGillRotDesc>
+	
+	<!-- Biotech -->
 	
 	<VCEF_TooPolluted>This fishing zone is too polluted to fish</VCEF_TooPolluted>
 
