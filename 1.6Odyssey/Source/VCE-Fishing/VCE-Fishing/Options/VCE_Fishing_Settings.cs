@@ -15,6 +15,9 @@ namespace VCE_Fishing.Options
         public bool VCEF_DisableGillRot = VCEF_DisableGillRotBase;
         public static bool VCEF_DisableGillRotBase = false;
 
+        public bool VCEF_UseWorktype = VCEF_UseWorktypeBase;
+        public static bool VCEF_UseWorktypeBase = false;
+
         public const int fishingYieldBase = 1;
         public static float VCEF_fishingYieldMultiplier = fishingYieldBase;
 
@@ -48,6 +51,7 @@ namespace VCE_Fishing.Options
             Scribe_Values.Look(ref VCEF_minDaysBetweenRareCatches, "VCEF_minDaysBetweenRareCatches", minDaysBetweenRareCatchesBase, true);
             Scribe_Values.Look(ref VCEF_chanceForNegativeOutcome, "VCEF_chanceForNegativeOutcome", chanceForNegativeOutcomeBase, true);
             Scribe_Values.Look(ref VCEF_DisableGillRot, "VCEF_DisableGillRot", VCEF_DisableGillRotBase, true);
+            Scribe_Values.Look(ref VCEF_UseWorktype, "VCEF_UseWorktype", VCEF_UseWorktypeBase, true);
 
         }
 
@@ -70,6 +74,9 @@ namespace VCE_Fishing.Options
             ls.Begin(contentRect.AtZero());
 
             ls.CheckboxLabeled("VCEF_DisableGillRot".Translate(), ref VCEF_DisableGillRot, "VCEF_DisableGillRotDesc".Translate());
+            ls.Gap(12f);
+
+            ls.CheckboxLabeled("VCEF_UseWorktype".Translate(), ref VCEF_UseWorktype, "VCEF_UseWorktypeDesc".Translate());
             ls.Gap(12f);
 
             ls.Label(new TaggedString("VCEF_fishingYieldMultiplier".Translate() + ": x" + VCEF_fishingYieldMultiplier), -1, "VCEF_fishingYieldMultiplierTooltip".Translate());
@@ -117,6 +124,8 @@ namespace VCE_Fishing.Options
                 VCEF_chanceForNegativeOutcome = chanceForNegativeOutcomeBase;
 
                 VCEF_DisableGillRot = VCEF_DisableGillRotBase;
+
+                VCEF_UseWorktype = VCEF_UseWorktypeBase;
             }
 
 

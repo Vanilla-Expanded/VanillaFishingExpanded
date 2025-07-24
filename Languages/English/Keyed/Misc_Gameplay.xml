@@ -71,6 +71,9 @@
 	<VCEF_DisableGillRot>Disable Gill Rot</VCEF_DisableGillRot>
 	<VCEF_DisableGillRotDesc>If checked, it will make Gill Rit impossible to happen under any circumstances.</VCEF_DisableGillRotDesc>
 	
+	<VCEF_UseWorktype>Separate "Fish" work type from Hunting (requires game reload)</VCEF_UseWorktype>
+	<VCEF_UseWorktypeDesc>By default, Odyssey uses the Hunting work type for fishing jobs. By activating this toggle you can revert the behaviour to how it was in this mod before Odyssey, with its own "Fish" work type that sits almost at the bottom of the work type priority list. Requires a game reload to take effect.</VCEF_UseWorktypeDesc>
+	
 	<!-- Biotech -->
 	
 	<VCEF_TooPolluted>This fishing zone is too polluted to fish</VCEF_TooPolluted>

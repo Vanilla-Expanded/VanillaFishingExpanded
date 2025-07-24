@@ -9,7 +9,7 @@
 				<spawnLocType>OnSource</spawnLocType>
 				<maxMoteCount>1</maxMoteCount>
 				<destroyMoteOnCleanup>True</destroyMoteOnCleanup>
-				<positionOffset>(0, 0, .55)</positionOffset>
+				<positionOffset>(0, 0, 1)</positionOffset>
 				<moteDef>VCEF_Mote_FishingRod_MechAncient</moteDef>
 				<angle>0</angle>
 				<rotation>0</rotation>
@@ -35,7 +35,7 @@
 				<spawnLocType>OnSource</spawnLocType>
 				<maxMoteCount>1</maxMoteCount>
 				<destroyMoteOnCleanup>True</destroyMoteOnCleanup>
-				<positionOffset>(0, 0, .55)</positionOffset>
+				<positionOffset>(0, 0, 1)</positionOffset>
 				<moteDef>VCEF_Mote_FishingRod_MechNew</moteDef>
 				<angle>0</angle>
 				<rotation>0</rotation>

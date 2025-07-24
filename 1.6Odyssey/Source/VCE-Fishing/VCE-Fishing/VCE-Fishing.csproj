@@ -307,6 +307,7 @@
     <Compile Include="Options\SettingsHelper.cs" />
     <Compile Include="Options\Settings_Controller.cs" />
     <Compile Include="Options\VCE_Fishing_Settings.cs" />
+    <Compile Include="PatchOperations\PatchOperationModOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

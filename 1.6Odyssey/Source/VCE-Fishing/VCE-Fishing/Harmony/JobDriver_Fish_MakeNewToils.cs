@@ -40,8 +40,8 @@ namespace VCE_Fishing
                 if (codes[i].opcode == OpCodes.Ldsfld && codes[i].OperandIs(field))
                 {
 
-
-                    yield return new CodeInstruction(OpCodes.Ldloc_3);
+                 
+                    yield return new CodeInstruction(OpCodes.Ldloc_1);
                     yield return new CodeInstruction(OpCodes.Call, modifyEffecter);
 
                 }else if (codes[i].opcode == OpCodes.Call && codes[i].OperandIs(getStatValue))
@@ -57,9 +57,10 @@ namespace VCE_Fishing
         }
 
 
-        public static EffecterDef ModifyEffecter(Toil toil)
+        public static EffecterDef ModifyEffecter(JobDriver_Fish job)
         {
-            Pawn pawn = toil.GetActor();
+            Pawn pawn = job.pawn;
+           
             if(pawn?.IsColonyMech == true)
             {
                 if(pawn.ageTracker.AgeChronologicalYears < 100)

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="VCE_Fishing.PatchOperationModOption">
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+						<WorkTypeDef>
+							<defName>VCEF_Fishing</defName>
+							<labelShort>Fish</labelShort>
+							<pawnLabel>Fisher</pawnLabel>
+							<gerundLabel>fishing</gerundLabel>
+							<description>Catch fish in designated work zones.</description>
+							<verb>Fish</verb>
+							<naturalPriority>90</naturalPriority>
+							<requireCapableColonist>true</requireCapableColonist>
+							<relevantSkills>
+								<li>Animals</li>
+							</relevantSkills>
+							<workTags>
+								<li>ManualSkilled</li>
+								<li>Animals</li>
+								<li>AllWork</li>
+							</workTags>
+						</WorkTypeDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/WorkGiverDef[defName="Fish"]/workType</xpath>
+					<value>
+						<workType>VCEF_Fishing</workType>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+</Patch>
