@@ -71,8 +71,8 @@
 	<VCEF_DisableGillRot>Disable Gill Rot</VCEF_DisableGillRot>
 	<VCEF_DisableGillRotDesc>If checked, it will make Gill Rit impossible to happen under any circumstances.</VCEF_DisableGillRotDesc>
 	
-	<VCEF_UseWorktype>Separate "Fish" work type from Hunting (requires game reload)</VCEF_UseWorktype>
-	<VCEF_UseWorktypeDesc>By default, Odyssey uses the Hunting work type for fishing jobs. By activating this toggle you can revert the behaviour to how it was in this mod before Odyssey, with its own "Fish" work type that sits almost at the bottom of the work type priority list. Requires a game reload to take effect.</VCEF_UseWorktypeDesc>
+	<VCEF_UseWorktype>Move "Fish" work type to the lowest priority (requires game reload)</VCEF_UseWorktype>
+	<VCEF_UseWorktypeDesc>By default, Odyssey puts the Fish work type on the work priority order between Craft and Haul. With this option Fish will be at priority 90, after Research, which was the way this mod worked without Odyssey.</VCEF_UseWorktypeDesc>
 	
 	<!-- Biotech -->
 	
